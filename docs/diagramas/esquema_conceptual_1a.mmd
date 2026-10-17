@@ -1,0 +1,32 @@
+```mermaid
+graph TD
+    classDef abstractClass fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,font-weight:bold;
+    classDef concreteClass fill:#f1f8e9,stroke:#33691e,stroke-width:2px;
+    classDef compClass fill:#fbe9e7,stroke:#d84315,stroke-width:2px;
+    classDef assocClass fill:#ede7f6,stroke:#512da8,stroke-width:2px;
+
+    Animal["Animal (Abstracto)<br/>- idAnimal, nombre, peso, edad<br/>+ RegistrarAtencion()<br/>+ EmitirFichaClinica()*"]:::abstractClass
+    Perro["Perro (Especialización Canina)<br/>- raza, nivelEnergia, aptoNinos<br/>+ AplicarVacunaSextuple()"]:::concreteClass
+    Gato["Gato (Especialización Felina)<br/>- testFelvFiv, esIndoor, pelaje<br/>+ RealizarTestFelvFiv()"]:::concreteClass
+    HistorialMedico["HistorialMedico (Registro Clínico)<br/>- fecha, tipo, diagnostico, tratamiento<br/>+ ObtenerFichaResumida()"]:::compClass
+    Refugio["Refugio / Sede Fundación<br/>- nombreSede, capacidad<br/>+ RecibirAnimal(), InscribirVoluntario()"]:::assocClass
+    Voluntario["Voluntario<br/>- rut, nombre, rol, horas<br/>+ ObtenerResumen()"]:::assocClass
+    Adoptante["Adoptante<br/>- rut, nombre, contacto, vivienda<br/>+ EsAptoParaGatos()"]:::assocClass
+    SolicitudAdopcion["SolicitudAdopcion<br/>- fecha, estado, observaciones<br/>+ ConcretarAdopcion()"]:::assocClass
+
+    %% 1. GENERALIZACIÓN / HERENCIA
+    Animal -->|"1. Herencia (Generalización)"| Perro
+    Animal -->|"1. Herencia (Generalización)"| Gato
+
+    %% 2. COMPOSICIÓN ESTRICTA
+    Animal -->|"2. Composición (Vida dependiente: 1 a 1..*)"| HistorialMedico
+
+    %% 3. AGREGACIÓN
+    Refugio -->|"3. Agregación (Vida independiente: 0..*)"| Animal
+    Refugio -->|"3. Agregación (Vida independiente: 0..*)"| Voluntario
+
+    %% 4. ASOCIACIÓN
+    SolicitudAdopcion -->|"4. Asociación (Vínculo colaborativo)"| Adoptante
+    SolicitudAdopcion -->|"4. Asociación (Vínculo colaborativo)"| Animal
+    SolicitudAdopcion -->|"4. Asociación (Vínculo de supervisión)"| Voluntario
+```
