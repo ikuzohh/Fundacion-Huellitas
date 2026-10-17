@@ -1,0 +1,239 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 860" width="100%" height="100%">
+  <defs>
+    <style>
+      .main-title { font-family: 'Segoe UI', Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #0f172a; }
+      .main-sub { font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; fill: #64748b; }
+      .c-header { font-family: 'Segoe UI', Arial, sans-serif; font-size: 13.5px; font-weight: bold; fill: #0f172a; }
+      .c-stereo { font-family: 'Segoe UI', Arial, sans-serif; font-size: 11px; font-style: italic; fill: #334155; }
+      .c-text { font-family: 'Consolas', 'Courier New', monospace; font-size: 11px; fill: #1e293b; }
+      .c-method { font-family: 'Consolas', 'Courier New', monospace; font-size: 11px; fill: #0369a1; }
+      .card-box { rx: 6px; ry: 6px; stroke-width: 1.5; filter: drop-shadow(0 3px 6px rgba(0,0,0,0.06)); }
+      .mult { font-family: 'Segoe UI', Arial, sans-serif; font-size: 11px; font-weight: bold; fill: #334155; }
+      .rel-tag { font-family: 'Segoe UI', Arial, sans-serif; font-size: 10px; font-weight: bold; }
+    </style>
+    <marker id="arrow-inherit-2" markerWidth="14" markerHeight="14" refX="13" refY="7" orient="auto">
+      <polygon points="1,1 13,7 1,13" fill="#ffffff" stroke="#1e3a8a" stroke-width="1.6" />
+    </marker>
+    <marker id="diamond-comp-2" markerWidth="16" markerHeight="16" refX="0" refY="8" orient="auto">
+      <polygon points="0,8 8,3 16,8 8,13" fill="#991b1b" stroke="#991b1b" stroke-width="1.6" />
+    </marker>
+    <marker id="diamond-aggr-2" markerWidth="16" markerHeight="16" refX="0" refY="8" orient="auto">
+      <polygon points="0,8 8,3 16,8 8,13" fill="#ffffff" stroke="#4338ca" stroke-width="1.6" />
+    </marker>
+    <marker id="arrow-assoc-2" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <polyline points="2,2 10,6 2,10" fill="none" stroke="#047857" stroke-width="1.6" />
+    </marker>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="1200" height="860" fill="#f8fafc" />
+
+  <!-- Title Header -->
+  <rect x="25" y="15" width="1150" height="60" rx="8" fill="#ffffff" stroke="#cbd5e1" />
+  <text x="45" y="40" class="main-title">SUBTAREA 1B: Diagrama Formal de Clases UML — Fundación Huellitas</text>
+  <text x="45" y="60" class="main-sub">Notación UML estándar con visibilidad (+, -, #), tipos de datos, parámetros, cardinalidades y las 4 relaciones de la POO</text>
+
+  <!-- 1. CLASE ABSTRACTA ANIMAL (CENTRO SUPERIOR) -->
+  <g transform="translate(420, 95)">
+    <rect class="card-box" width="370" height="230" fill="#ffffff" stroke="#2563eb" />
+    <rect width="370" height="40" rx="6" fill="#eff6ff" stroke="#2563eb" />
+    <text x="185" y="17" text-anchor="middle" class="c-stereo">&lt;&lt;abstract&gt;&gt;</text>
+    <text x="185" y="33" text-anchor="middle" class="c-header">Animal</text>
+    <line x1="0" y1="40" x2="370" y2="40" stroke="#2563eb" stroke-width="1.2" />
+    <!-- Atributos -->
+    <text x="10" y="55" class="c-text"># _idAnimal : string</text>
+    <text x="10" y="70" class="c-text"># _nombre : string</text>
+    <text x="10" y="85" class="c-text"># _edadMeses : int</text>
+    <text x="10" y="100" class="c-text"># _pesoKg : double</text>
+    <text x="10" y="115" class="c-text"># _sexo : string</text>
+    <text x="10" y="130" class="c-text">- _estado : EstadoSalud</text>
+    <text x="10" y="145" class="c-text">- _historialClinico : List&lt;HistorialMedico&gt;</text>
+    <line x1="0" y1="152" x2="370" y2="152" stroke="#e2e8f0" stroke-width="1" />
+    <!-- Métodos -->
+    <text x="10" y="167" class="c-method">+ RegistrarAtencion(tipo, dx, tx, vet, costo) : HistorialMedico</text>
+    <text x="10" y="181" class="c-method">+ ActualizarEstadoSalud(nuevoEstado : EstadoSalud) : void</text>
+    <text x="10" y="195" class="c-method">+ RealizarEsterilizacion(veterinario : string) : void</text>
+    <text x="10" y="209" class="c-method">+ {abstract} ObtenerEspecie() : string</text>
+    <text x="10" y="223" class="c-method">+ {abstract} EmitirFichaClinica() : string</text>
+  </g>
+
+  <!-- 2. CLASE PERRO (HERENCIA) -->
+  <g transform="translate(260, 380)">
+    <rect class="card-box" width="310" height="175" fill="#ffffff" stroke="#16a34a" />
+    <rect width="310" height="30" rx="6" fill="#f0fdf4" stroke="#16a34a" />
+    <text x="155" y="21" text-anchor="middle" class="c-header">Perro</text>
+    <line x1="0" y1="30" x2="310" y2="30" stroke="#16a34a" stroke-width="1.2" />
+    <!-- Atributos -->
+    <text x="10" y="47" class="c-text">- _raza : string</text>
+    <text x="10" y="62" class="c-text">- _nivelEnergia : string</text>
+    <text x="10" y="77" class="c-text">+ EsAptoConNinos : bool {get; set;}</text>
+    <text x="10" y="92" class="c-text">+ VacunacionSextupleAlDia : bool {get;}</text>
+    <line x1="0" y1="98" x2="310" y2="98" stroke="#e2e8f0" stroke-width="1" />
+    <!-- Métodos -->
+    <text x="10" y="113" class="c-method">+ ObtenerEspecie() : string</text>
+    <text x="10" y="128" class="c-method">+ EmitirFichaClinica() : string</text>
+    <text x="10" y="143" class="c-method">+ CalcularDosisMedicamento(factor) : double</text>
+    <text x="10" y="158" class="c-method">+ HacerSonidoCaracteristico() : string</text>
+    <text x="10" y="171" class="c-method">+ AplicarVacunaSextuple(vet) : void</text>
+  </g>
+
+  <!-- 3. CLASE GATO (HERENCIA) -->
+  <g transform="translate(630, 380)">
+    <rect class="card-box" width="310" height="175" fill="#ffffff" stroke="#16a34a" />
+    <rect width="310" height="30" rx="6" fill="#f0fdf4" stroke="#16a34a" />
+    <text x="155" y="21" text-anchor="middle" class="c-header">Gato</text>
+    <line x1="0" y1="30" x2="310" y2="30" stroke="#16a34a" stroke-width="1.2" />
+    <!-- Atributos -->
+    <text x="10" y="47" class="c-text">- _testFelvFiv : string</text>
+    <text x="10" y="62" class="c-text">- _tipoPelaje : string</text>
+    <text x="10" y="77" class="c-text">+ EsIndoor : bool {get; set;}</text>
+    <text x="10" y="92" class="c-text">+ VacunaTripleFelinaAlDia : bool {get;}</text>
+    <line x1="0" y1="98" x2="310" y2="98" stroke="#e2e8f0" stroke-width="1" />
+    <!-- Métodos -->
+    <text x="10" y="113" class="c-method">+ ObtenerEspecie() : string</text>
+    <text x="10" y="128" class="c-method">+ EmitirFichaClinica() : string</text>
+    <text x="10" y="143" class="c-method">+ CalcularDosisMedicamento(factor) : double</text>
+    <text x="10" y="158" class="c-method">+ HacerSonidoCaracteristico() : string</text>
+    <text x="10" y="171" class="c-method">+ RealizarTestFelvFiv(res, vet) : void</text>
+  </g>
+
+  <!-- Flechas Herencia -->
+  <path d="M 415,380 L 415,350 L 605,350 L 605,325" fill="none" stroke="#1e3a8a" stroke-width="1.8" marker-end="url(#arrow-inherit-2)" />
+  <path d="M 785,380 L 785,350 L 605,350" fill="none" stroke="#1e3a8a" stroke-width="1.8" />
+  <text x="615" y="343" class="rel-tag" fill="#1e3a8a">Generalización</text>
+
+  <!-- 4. CLASE HISTORIALMEDICO (COMPOSICIÓN) -->
+  <g transform="translate(850, 95)">
+    <rect class="card-box" width="320" height="205" fill="#ffffff" stroke="#b91c1c" />
+    <rect width="320" height="30" rx="6" fill="#fef2f2" stroke="#b91c1c" />
+    <text x="160" y="21" text-anchor="middle" class="c-header">HistorialMedico</text>
+    <line x1="0" y1="30" x2="320" y2="30" stroke="#b91c1c" stroke-width="1.2" />
+    <!-- Atributos -->
+    <text x="10" y="47" class="c-text">+ IdAtencion : string {get;}</text>
+    <text x="10" y="62" class="c-text">+ Fecha : DateTime {get;}</text>
+    <text x="10" y="77" class="c-text">+ Tipo : TipoAtencion {get;}</text>
+    <text x="10" y="92" class="c-text">- _diagnostico : string</text>
+    <text x="10" y="107" class="c-text">- _tratamiento : string</text>
+    <text x="10" y="122" class="c-text">- _veterinario : string</text>
+    <text x="10" y="137" class="c-text">- _costo : decimal</text>
+    <line x1="0" y1="144" x2="320" y2="144" stroke="#e2e8f0" stroke-width="1" />
+    <!-- Métodos -->
+    <text x="10" y="160" class="c-method">~ HistorialMedico(tipo, dx, tx, vet, costo)</text>
+    <text x="10" y="177" class="c-method">+ ObtenerFichaResumida() : string</text>
+  </g>
+
+  <!-- Línea Composición -->
+  <line x1="790" y1="180" x2="850" y2="180" stroke="#991b1b" stroke-width="2" marker-start="url(#diamond-comp-2)" />
+  <text x="800" y="196" class="mult" fill="#991b1b">1</text>
+  <text x="832" y="196" class="mult" fill="#991b1b">1..*</text>
+  <text x="802" y="170" class="rel-tag" fill="#991b1b">Composición</text>
+
+  <!-- 5. CLASE REFUGIO (AGREGACIÓN) -->
+  <g transform="translate(30, 95)">
+    <rect class="card-box" width="310" height="190" fill="#ffffff" stroke="#4338ca" />
+    <rect width="310" height="30" rx="6" fill="#f5f3ff" stroke="#4338ca" />
+    <text x="155" y="21" text-anchor="middle" class="c-header">Refugio</text>
+    <line x1="0" y1="30" x2="310" y2="30" stroke="#4338ca" stroke-width="1.2" />
+    <!-- Atributos -->
+    <text x="10" y="47" class="c-text">+ NombreSede : string {get; set;}</text>
+    <text x="10" y="62" class="c-text">+ Direccion : string {get; set;}</text>
+    <text x="10" y="77" class="c-text">+ CapacidadMaxima : int {get;}</text>
+    <text x="10" y="92" class="c-text">- _animalesAlbergados : List&lt;Animal&gt;</text>
+    <text x="10" y="107" class="c-text">- _voluntarios : List&lt;Voluntario&gt;</text>
+    <line x1="0" y1="114" x2="310" y2="114" stroke="#e2e8f0" stroke-width="1" />
+    <!-- Métodos -->
+    <text x="10" y="130" class="c-method">+ RecibirAnimal(animal : Animal) : void</text>
+    <text x="10" y="145" class="c-method">+ RetirarAnimal(animal : Animal) : bool</text>
+    <text x="10" y="160" class="c-method">+ InscribirVoluntario(v : Voluntario) : void</text>
+    <text x="10" y="175" class="c-method">+ ContarPorEspecie&lt;T&gt;() : int</text>
+  </g>
+
+  <!-- Línea Agregación Refugio -> Animal -->
+  <line x1="340" y1="180" x2="420" y2="180" stroke="#4338ca" stroke-width="2" marker-start="url(#diamond-aggr-2)" />
+  <text x="350" y="196" class="mult" fill="#4338ca">1</text>
+  <text x="400" y="196" class="mult" fill="#4338ca">0..*</text>
+  <text x="350" y="170" class="rel-tag" fill="#4338ca">Agregación</text>
+
+  <!-- 6. CLASE VOLUNTARIO (AGREGACIÓN / ASOCIACIÓN) -->
+  <g transform="translate(30, 380)">
+    <rect class="card-box" width="200" height="160" fill="#ffffff" stroke="#7e22ce" />
+    <rect width="200" height="30" rx="6" fill="#faf5ff" stroke="#7e22ce" />
+    <text x="100" y="21" text-anchor="middle" class="c-header">Voluntario</text>
+    <line x1="0" y1="30" x2="200" y2="30" stroke="#7e22ce" stroke-width="1.2" />
+    <text x="10" y="47" class="c-text">- _rut : string</text>
+    <text x="10" y="62" class="c-text">- _nombreCompleto : string</text>
+    <text x="10" y="77" class="c-text">+ Rol : string {get; set;}</text>
+    <text x="10" y="92" class="c-text">+ Telefono : string {get; set;}</text>
+    <text x="10" y="107" class="c-text">- _horasSemanales : int</text>
+    <text x="10" y="122" class="c-text">+ EstaActivo : bool {get; set;}</text>
+    <line x1="0" y1="128" x2="200" y2="128" stroke="#e2e8f0" stroke-width="1" />
+    <text x="10" y="146" class="c-method">+ ObtenerResumen() : string</text>
+  </g>
+
+  <!-- Línea Agregación Refugio -> Voluntario -->
+  <line x1="130" y1="285" x2="130" y2="380" stroke="#4338ca" stroke-width="1.8" marker-start="url(#diamond-aggr-2)" />
+  <text x="138" y="325" class="rel-tag" fill="#4338ca">Agregación (0..*)</text>
+
+  <!-- 7. CLASE ADOPTANTE (ASOCIACIÓN) -->
+  <g transform="translate(850, 600)">
+    <rect class="card-box" width="320" height="185" fill="#ffffff" stroke="#059669" />
+    <rect width="320" height="30" rx="6" fill="#ecfdf5" stroke="#059669" />
+    <text x="160" y="21" text-anchor="middle" class="c-header">Adoptante</text>
+    <line x1="0" y1="30" x2="320" y2="30" stroke="#059669" stroke-width="1.2" />
+    <text x="10" y="47" class="c-text">- _rut : string</text>
+    <text x="10" y="62" class="c-text">- _nombreCompleto : string</text>
+    <text x="10" y="77" class="c-text">- _telefono : string</text>
+    <text x="10" y="92" class="c-text">- _correo : string</text>
+    <text x="10" y="107" class="c-text">+ TipoVivienda : string {get; set;}</text>
+    <text x="10" y="122" class="c-text">+ TieneMallasORejasSeguras : bool</text>
+    <text x="10" y="137" class="c-text">+ TieneOtrasMascotas : bool</text>
+    <line x1="0" y1="144" x2="320" y2="144" stroke="#e2e8f0" stroke-width="1" />
+    <text x="10" y="162" class="c-method">+ EsAptoParaGatos() : bool</text>
+  </g>
+
+  <!-- 8. CLASE SOLICITUDADOPCION (ASOCIACIÓN) -->
+  <g transform="translate(380, 600)">
+    <rect class="card-box" width="370" height="190" fill="#ffffff" stroke="#c026d3" />
+    <rect width="380" height="30" rx="6" fill="#fdf4ff" stroke="#c026d3" />
+    <text x="185" y="21" text-anchor="middle" class="c-header">SolicitudAdopcion</text>
+    <line x1="0" y1="30" x2="370" y2="30" stroke="#c026d3" stroke-width="1.2" />
+    <text x="10" y="47" class="c-text">+ IdSolicitud : string {get;}</text>
+    <text x="10" y="62" class="c-text">+ FechaPostulacion : DateTime {get;}</text>
+    <text x="10" y="77" class="c-text">+ AdoptantePostulante : Adoptante {get;}</text>
+    <text x="10" y="92" class="c-text">+ AnimalSolicitado : Animal {get;}</text>
+    <text x="10" y="107" class="c-text">+ VoluntarioEvaluador : Voluntario {get; set;}</text>
+    <text x="10" y="122" class="c-text">+ Estado : EstadoSolicitud {get;}</text>
+    <text x="10" y="137" class="c-text">+ Observaciones : string {get;}</text>
+    <line x1="0" y1="144" x2="370" y2="144" stroke="#e2e8f0" stroke-width="1" />
+    <text x="10" y="159" class="c-method">+ AsignarVoluntario(v : Voluntario) : void</text>
+    <text x="10" y="173" class="c-method">+ EvaluarPreAprobacion() : void</text>
+    <text x="10" y="187" class="c-method">+ ConcretarAdopcion(resolucion : string) : void</text>
+  </g>
+
+  <!-- Líneas Asociación -->
+  <!-- SolicitudAdopcion -> Adoptante -->
+  <line x1="750" y1="675" x2="850" y2="675" stroke="#047857" stroke-width="1.8" marker-end="url(#arrow-assoc-2)" />
+  <text x="760" y="665" class="mult" fill="#047857">0..*</text>
+  <text x="830" y="665" class="mult" fill="#047857">1</text>
+  <text x="770" y="692" class="rel-tag" fill="#047857">Asociación</text>
+
+  <!-- SolicitudAdopcion -> Voluntario -->
+  <path d="M 380,675 L 130,675 L 130,540" fill="none" stroke="#047857" stroke-width="1.8" marker-end="url(#arrow-assoc-2)" />
+  <text x="140" y="620" class="rel-tag" fill="#047857">Asociación (0..1)</text>
+
+  <!-- SolicitudAdopcion -> Animal -->
+  <path d="M 565,600 L 565,325" fill="none" stroke="#047857" stroke-width="1.8" stroke-dasharray="4,4" marker-end="url(#arrow-assoc-2)" />
+  <text x="575" y="345" class="rel-tag" fill="#047857">Asociación (1)</text>
+
+  <!-- Leyenda Inferior de Visibilidad UML -->
+  <g transform="translate(25, 805)">
+    <rect width="1150" height="42" rx="6" fill="#ffffff" stroke="#e2e8f0" />
+    <text x="20" y="26" font-family="'Segoe UI', Arial" font-size="11.5" font-weight="bold" fill="#1e293b">NOTACIÓN DE VISIBILIDAD UML:</text>
+    <text x="210" y="26" font-family="'Consolas', monospace" font-size="11.5" fill="#15803d">+ Público</text>
+    <text x="310" y="26" font-family="'Consolas', monospace" font-size="11.5" fill="#b91c1c">- Privado</text>
+    <text x="410" y="26" font-family="'Consolas', monospace" font-size="11.5" fill="#d97706"># Protegido</text>
+    <text x="530" y="26" font-family="'Consolas', monospace" font-size="11.5" fill="#4338ca">~ Internal</text>
+    <text x="640" y="26" font-family="'Segoe UI', Arial" font-size="11.5" fill="#475569">| &lt;&lt;abstract&gt;&gt; Superclase no instanciable</text>
+    <text x="910" y="26" font-family="'Segoe UI', Arial" font-size="11.5" fill="#475569">| Cardinalidad: 1 (Uno), 1..* (Uno o más), 0..* (Cero o más)</text>
+  </g>
+</svg>

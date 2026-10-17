@@ -1,0 +1,148 @@
+```mermaid
+classDiagram
+    direction TB
+    
+    note for Animal "Superclase Abstracta\nPatrón Dominio POO"
+    note for HistorialMedico "COMPOSICIÓN ESTRICTA (1..*)\nCiclo de vida gobernado por Animal"
+    note for Refugio "AGREGACIÓN\nAnimales y Voluntarios existen independientemente"
+    note for SolicitudAdopcion "ASOCIACIÓN\nVincula Adoptante, Animal y Voluntario"
+
+    class Animal {
+        <<abstract>>
+        #string _idAnimal
+        #string _nombre
+        #int _edadMeses
+        #double _pesoKg
+        #string _sexo
+        -EstadoSalud _estado
+        -List~HistorialMedico~ _historialClinico
+        +string IdAnimal
+        +string Nombre
+        +int EdadMeses
+        +double PesoKg
+        +string Sexo
+        +EstadoSalud Estado
+        +DateTime FechaIngreso
+        +bool EstaEsterilizado
+        +IReadOnlyList~HistorialMedico~ HistorialClinico
+        +RegistrarAtencion(TipoAtencion, string, string, string, decimal) HistorialMedico
+        +ActualizarEstadoSalud(EstadoSalud) void
+        +RealizarEsterilizacion(string) void
+        +ObtenerEspecie()* string
+        +EmitirFichaClinica()* string
+        +CalcularDosisMedicamento(double)* double
+        +HacerSonidoCaracteristico()* string
+    }
+
+    class Perro {
+        -string _raza
+        -string _nivelEnergia
+        +string Raza
+        +string NivelEnergia
+        +bool EsAptoConNinos
+        +bool VacunacionSextupleAlDia
+        +ObtenerEspecie() string
+        +EmitirFichaClinica() string
+        +CalcularDosisMedicamento(double) double
+        +HacerSonidoCaracteristico() string
+        +AplicarVacunaSextuple(string) void
+    }
+
+    class Gato {
+        -string _testFelvFiv
+        -string _tipoPelaje
+        +bool EsIndoor
+        +string TestFelvFiv
+        +string TipoPelaje
+        +bool VacunaTripleFelinaAlDia
+        +ObtenerEspecie() string
+        +EmitirFichaClinica() string
+        +CalcularDosisMedicamento(double) double
+        +HacerSonidoCaracteristico() string
+        +RealizarTestFelvFiv(string, string) void
+        +AplicarVacunaTripleFelina(string) void
+    }
+
+    class HistorialMedico {
+        -string _diagnostico
+        -string _tratamiento
+        -string _veterinario
+        -decimal _costo
+        +string IdAtencion
+        +DateTime Fecha
+        +TipoAtencion Tipo
+        +string Diagnostico
+        +string Tratamiento
+        +string Veterinario
+        +decimal Costo
+        ~HistorialMedico(TipoAtencion, string, string, string, decimal)
+        +ObtenerFichaResumida() string
+    }
+
+    class Adoptante {
+        -string _rut
+        -string _nombreCompleto
+        -string _telefono
+        -string _correo
+        +string Rut
+        +string NombreCompleto
+        +string Direccion
+        +string Telefono
+        +string Correo
+        +string TipoVivienda
+        +bool TieneMallasORejasSeguras
+        +bool TieneOtrasMascotas
+        +EsAptoParaGatos() bool
+    }
+
+    class Voluntario {
+        -string _rut
+        -string _nombreCompleto
+        -int _horasSemanales
+        +string Rut
+        +string NombreCompleto
+        +string Rol
+        +string Telefono
+        +bool EstaActivo
+        +int HorasSemanales
+        +ObtenerResumenVoluntario() string
+    }
+
+    class SolicitudAdopcion {
+        +string IdSolicitud
+        +DateTime FechaPostulacion
+        +Adoptante AdoptantePostulante
+        +Animal AnimalSolicitado
+        +Voluntario VoluntarioEvaluador
+        +EstadoSolicitud Estado
+        +string Observaciones
+        +AsignarVoluntario(Voluntario) void
+        +EvaluarPreAprobacion() void
+        +ConcretarAdopcion(string) void
+        +ObtenerResumen() string
+    }
+
+    class Refugio {
+        -List~Animal~ _animalesAlbergados
+        -List~Voluntario~ _voluntariosRegistrados
+        +string NombreSede
+        +string Direccion
+        +int CapacidadMaxima
+        +IReadOnlyList~Animal~ AnimalesAlbergados
+        +IReadOnlyList~Voluntario~ VoluntariosRegistrados
+        +RecibirAnimal(Animal) void
+        +RetirarAnimal(Animal) bool
+        +InscribirVoluntario(Voluntario) void
+        +ContarPorEspecie~T~() int
+    }
+
+    %% RELACIONES
+    Animal <|-- Perro : Generalización / Herencia
+    Animal <|-- Gato : Generalización / Herencia
+    Animal "1" *-- "1..*" HistorialMedico : Composición Estricta
+    Refugio "1" o-- "0..*" Animal : Agregación
+    Refugio "1" o-- "0..*" Voluntario : Agregación
+    SolicitudAdopcion "0..*" --> "1" Adoptante : Asociación
+    SolicitudAdopcion "0..*" --> "1" Animal : Asociación
+    SolicitudAdopcion "0..*" --> "0..1" Voluntario : Asociación
+```

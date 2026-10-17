@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagramas UML - Fundación Huellitas | AIEP PRO205</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --accent: #0284c7;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #0f172a;
+            --border: #e2e8f0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 24px;
+            line-height: 1.6;
+        }
+        .header {
+            max-width: 1200px;
+            margin: 0 auto 30px auto;
+            background: linear-gradient(135deg, #1e3a8a, #0369a1);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 26px;
+        }
+        .header p {
+            margin: 5px 0;
+            opacity: 0.9;
+            font-size: 15px;
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+        .card {
+            max-width: 1200px;
+            margin: 0 auto 35px auto;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        .card-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+        }
+        .card-title h2 {
+            margin: 0;
+            font-size: 20px;
+            color: var(--primary);
+        }
+        .diagram-container {
+            overflow-x: auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #edf2f7;
+            text-align: center;
+        }
+        .legend {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            padding: 16px;
+            background: #f8fafc;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+        }
+        .btn-print {
+            background: #0284c7;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-print:hover {
+            background: #0369a1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <span class="badge">AIEP | Escuela TIC</span>
+        <span class="badge">PRO205 Taller de Programación</span>
+        <span class="badge">Evaluación Sumativa 3</span>
+        <h1>Visor Oficial de Arquitectura UML: Caso Fundación Huellitas</h1>
+        <p><strong>Articulación con Evaluación Nacional de Especialidad (ENE 2026)</strong></p>
+        <p>Demostración integral de las 4 relaciones de la POO: Generalización/Herencia, Composición, Agregación y Asociación.</p>
+    </div>
+
+    <!-- SECCIÓN 1: SUBTAREA 1A -->
+    <div class="card">
+        <div class="card-title">
+            <h2>Subtarea 1A: Esquema Conceptual Preliminar y Justificación Técnica</h2>
+            <button class="btn-print" onclick="window.print()">🖨 Imprimir / Guardar en PDF</button>
+        </div>
+        <p>Representación conceptual de entidades clave y categorización de los 4 tipos de relaciones de la Programación Orientada a Objetos.</p>
+        
+        <div class="diagram-container">
+            <pre class="mermaid">
+graph TD
+    classDef abstractClass fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,font-weight:bold;
+    classDef concreteClass fill:#f1f8e9,stroke:#33691e,stroke-width:2px;
+    classDef compClass fill:#fbe9e7,stroke:#d84315,stroke-width:2px;
+    classDef assocClass fill:#ede7f6,stroke:#512da8,stroke-width:2px;
+
+    Animal["Animal (Abstracto)<br/>- idAnimal, nombre, peso, edad<br/>+ RegistrarAtencion()<br/>+ EmitirFichaClinica()*"]:::abstractClass
+    Perro["Perro (Especialización Canina)<br/>- raza, nivelEnergia, aptoNinos<br/>+ AplicarVacunaSextuple()"]:::concreteClass
+    Gato["Gato (Especialización Felina)<br/>- testFelvFiv, esIndoor, pelaje<br/>+ RealizarTestFelvFiv()"]:::concreteClass
+    HistorialMedico["HistorialMedico (Registro Clínico)<br/>- fecha, tipo, diagnostico, tratamiento<br/>+ ObtenerFichaResumida()"]:::compClass
+    Refugio["Refugio / Sede Fundación<br/>- nombreSede, capacidad<br/>+ RecibirAnimal(), InscribirVoluntario()"]:::assocClass
+    Voluntario["Voluntario<br/>- rut, nombre, rol, horas<br/>+ ObtenerResumen()"]:::assocClass
+    Adoptante["Adoptante<br/>- rut, nombre, contacto, vivienda<br/>+ EsAptoParaGatos()"]:::assocClass
+    SolicitudAdopcion["SolicitudAdopcion<br/>- fecha, estado, observaciones<br/>+ ConcretarAdopcion()"]:::assocClass
+
+    %% 1. GENERALIZACIÓN / HERENCIA
+    Animal -->|"1. Herencia / Generalización"| Perro
+    Animal -->|"1. Herencia / Generalización"| Gato
+
+    %% 2. COMPOSICIÓN ESTRICTA
+    Animal -->|"2. Composición Estricta (1 a 1..*)"| HistorialMedico
+
+    %% 3. AGREGACIÓN
+    Refugio -->|"3. Agregación (0..*)"| Animal
+    Refugio -->|"3. Agregación (0..*)"| Voluntario
+
+    %% 4. ASOCIACIÓN
+    SolicitudAdopcion -->|"4. Asociación (Vínculo colaborativo)"| Adoptante
+    SolicitudAdopcion -->|"4. Asociación (Vínculo colaborativo)"| Animal
+    SolicitudAdopcion -->|"4. Asociación (Supervisión)"| Voluntario
+            </pre>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item"><div class="legend-color" style="background: #e3f2fd; border: 1px solid #1565c0;"></div> <strong>Generalización / Abstracción:</strong> Superclase base</div>
+            <div class="legend-item"><div class="legend-color" style="background: #f1f8e9; border: 1px solid #33691e;"></div> <strong>Especialización:</strong> Subclases concretas</div>
+            <div class="legend-item"><div class="legend-color" style="background: #fbe9e7; border: 1px solid #d84315;"></div> <strong>Composición:</strong> Ciclo de vida subordinado</div>
+            <div class="legend-item"><div class="legend-color" style="background: #ede7f6; border: 1px solid #512da8;"></div> <strong>Agregación / Asociación:</strong> Vínculos desacoplados</div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 2: SUBTAREA 1B -->
+    <div class="card">
+        <div class="card-title">
+            <h2>Subtarea 1B: Diagrama Formal de Clases en Notación UML Completa</h2>
+        </div>
+        <p>Estructura formal con especificación exhaustiva de visibilidad (+ Público, - Privado, # Protegido), tipos de datos, parámetros de métodos, multiplicidad y cardinalidad.</p>
+
+        <div class="diagram-container">
+            <pre class="mermaid">
+classDiagram
+    direction TB
+
+    class Animal {
+        <<abstract>>
+        #string _idAnimal
+        #string _nombre
+        #int _edadMeses
+        #double _pesoKg
+        #string _sexo
+        -EstadoSalud _estado
+        -List~HistorialMedico~ _historialClinico
+        +string IdAnimal
+        +string Nombre
+        +int EdadMeses
+        +double PesoKg
+        +string Sexo
+        +EstadoSalud Estado
+        +DateTime FechaIngreso
+        +bool EstaEsterilizado
+        +IReadOnlyList~HistorialMedico~ HistorialClinico
+        +RegistrarAtencion(tipo, dx, tx, vet, costo) HistorialMedico
+        +ActualizarEstadoSalud(nuevoEstado) void
+        +RealizarEsterilizacion(vet) void
+        +ObtenerEspecie()* string
+        +EmitirFichaClinica()* string
+        +CalcularDosisMedicamento(factor)* double
+        +HacerSonidoCaracteristico()* string
+    }
+
+    class Perro {
+        -string _raza
+        -string _nivelEnergia
+        +string Raza
+        +string NivelEnergia
+        +bool EsAptoConNinos
+        +bool VacunacionSextupleAlDia
+        +ObtenerEspecie() string
+        +EmitirFichaClinica() string
+        +CalcularDosisMedicamento(factor) double
+        +HacerSonidoCaracteristico() string
+        +AplicarVacunaSextuple(vet) void
+    }
+
+    class Gato {
+        -string _testFelvFiv
+        -string _tipoPelaje
+        +bool EsIndoor
+        +string TestFelvFiv
+        +string TipoPelaje
+        +bool VacunaTripleFelinaAlDia
+        +ObtenerEspecie() string
+        +EmitirFichaClinica() string
+        +CalcularDosisMedicamento(factor) double
+        +HacerSonidoCaracteristico() string
+        +RealizarTestFelvFiv(res, vet) void
+        +AplicarVacunaTripleFelina(vet) void
+    }
+
+    class HistorialMedico {
+        -string _diagnostico
+        -string _tratamiento
+        -string _veterinario
+        -decimal _costo
+        +string IdAtencion
+        +DateTime Fecha
+        +TipoAtencion Tipo
+        +string Diagnostico
+        +string Tratamiento
+        +string Veterinario
+        +decimal Costo
+        ~HistorialMedico(tipo, dx, tx, vet, costo)
+        +ObtenerFichaResumida() string
+    }
+
+    class Adoptante {
+        -string _rut
+        -string _nombreCompleto
+        -string _telefono
+        -string _correo
+        +string Rut
+        +string NombreCompleto
+        +string Direccion
+        +string Telefono
+        +string Correo
+        +string TipoVivienda
+        +bool TieneMallasORejasSeguras
+        +bool TieneOtrasMascotas
+        +EsAptoParaGatos() bool
+    }
+
+    class Voluntario {
+        -string _rut
+        -string _nombreCompleto
+        -int _horasSemanales
+        +string Rut
+        +string NombreCompleto
+        +string Rol
+        +string Telefono
+        +bool EstaActivo
+        +int HorasSemanales
+        +ObtenerResumenVoluntario() string
+    }
+
+    class SolicitudAdopcion {
+        +string IdSolicitud
+        +DateTime FechaPostulacion
+        +Adoptante AdoptantePostulante
+        +Animal AnimalSolicitado
+        +Voluntario VoluntarioEvaluador
+        +EstadoSolicitud Estado
+        +string Observaciones
+        +AsignarVoluntario(voluntario) void
+        +EvaluarPreAprobacion() void
+        +ConcretarAdopcion(resolucion) void
+        +ObtenerResumen() string
+    }
+
+    class Refugio {
+        -List~Animal~ _animalesAlbergados
+        -List~Voluntario~ _voluntariosRegistrados
+        +string NombreSede
+        +string Direccion
+        +int CapacidadMaxima
+        +IReadOnlyList~Animal~ AnimalesAlbergados
+        +IReadOnlyList~Voluntario~ VoluntariosRegistrados
+        +RecibirAnimal(animal) void
+        +RetirarAnimal(animal) bool
+        +InscribirVoluntario(voluntario) void
+        +ContarPorEspecie~T~() int
+    }
+
+    %% RELACIONES FORMALES
+    Animal <|-- Perro : Herencia / Generalización
+    Animal <|-- Gato : Herencia / Generalización
+    Animal "1" *-- "1..*" HistorialMedico : Composición Estricta
+    Refugio "1" o-- "0..*" Animal : Agregación
+    Refugio "1" o-- "0..*" Voluntario : Agregación
+    SolicitudAdopcion "0..*" --> "1" Adoptante : Asociación
+    SolicitudAdopcion "0..*" --> "1" Animal : Asociación
+    SolicitudAdopcion "0..*" --> "0..1" Voluntario : Asociación
+            </pre>
+        </div>
+    </div>
+
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose',
+            flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' }
+        });
+    </script>
+</body>
+</html>
