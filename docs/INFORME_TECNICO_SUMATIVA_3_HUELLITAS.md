@@ -414,11 +414,11 @@ Al heredar de `Animal`:
 
 ## 5. Pruebas y Verificación Automatizada (15 Pts de la Rúbrica)
 
-Para certificar la máxima calidad técnica del software y asegurar el puntaje completo en el criterio de *Pruebas y Verificación Automatizada*, se diseñó una batería de 11 pruebas unitarias automatizadas con el framework **xUnit**:
+Para certificar la máxima calidad técnica del software, auditar la resiliencia del dominio y asegurar el puntaje completo en el criterio de *Pruebas y Verificación Automatizada*, se diseñó y ejecutó una batería de **24 pruebas unitarias automatizadas** con el framework **xUnit**:
 
 ```text
 +-----------------------------------------------------------------------------------------+
-|                  RESULTADOS DE EJECUCIÓN DE PRUEBAS UNITARIAS (xUnit)                   |
+|                  RESULTADOS DE AUDITORÍA Y PRUEBAS UNITARIAS (xUnit)                    |
 +-------------------------------------------------------------------------+---------------+
 | Prueba Unitaria                                                         | Resultado     |
 +-------------------------------------------------------------------------+---------------+
@@ -433,9 +433,22 @@ Para certificar la máxima calidad técnica del software y asegurar el puntaje c
 | Polimorfismo_ColeccionHeterogenea_ResuelveSonidoSegunSubclase           | ✔ Superado    |
 | Polimorfismo_CalculoDosis_AplicaFactoresDiferenciadosPorEspecie         | ✔ Superado    |
 | Polimorfismo_EmitirFichaClinica_GeneraFormatoEspecializado               | ✔ Superado    |
+| SolicitudAdopcion_DebeRechazarGato_SiViviendaNoTieneMallasDeSeguridad   | ✔ Superado    |
+| SolicitudAdopcion_DebeAgendarEntrevista_CuandoAnimalEstaAptoYPerfil     | ✔ Superado    |
+| SolicitudAdopcion_DebeMantenerEnEspera_SiAnimalAunNoEstaRehabilitado    | ✔ Superado    |
+| SolicitudAdopcion_ConcretarAdopcion_FinalizaProcesoYActualizaEstado     | ✔ Superado    |
+| Refugio_DebeLanzarExcepcion_CuandoSeSuperaCapacidadMaxima               | ✔ Superado    |
+| Refugio_NoDebeDuplicarAnimal_SiSeIngresaMasDeUnaVez                     | ✔ Superado    |
+| Refugio_DebeContarEspeciesCorrectamente_MedianteMetodoGenerico          | ✔ Superado    |
+| Adoptante_DebeLanzarExcepcion_SiCorreoNoTieneArroba                     | ✔ Superado    |
+| Voluntario_DebeLanzarExcepcion_SiHorasSemanalesSonNegativas             | ✔ Superado    |
+| Composicion_HistorialClinico_NoPuedeCastearseAListaMutable              | ✔ Superado    |
+| Animal_CalcularDosis_DebeLanzarExcepcion_CuandoFactorEsCeroONegativo    | ✔ Superado    |
+| Perro_AplicarVacunaSextuple_ActualizaBanderaYAgregaRegistroAlHistorial  | ✔ Superado    |
+| Gato_RealizarTestFelvFiv_ActualizaResultadoYAgregaAtencionAlHistorial   | ✔ Superado    |
 +-------------------------------------------------------------------------+---------------+
-| RESUMEN: Total 11 pruebas | 11 Superadas (100% de éxito) | 0 Fallidas                   |
-+-----------------------------------------------------------------------------------------+
+| RESUMEN: Total 24 pruebas | 24 Superadas (100% de éxito) | 0 Fallidas                   |
++-------------------------------------------------------------------------+---------------+
 ```
 
 > La evidencia íntegra de ejecución en consola se encuentra archivada en [evidencia_tests.txt](file:///c:/Users/ikuzo/OneDrive/Desktop/entrega%20final/docs/evidencias/evidencia_tests.txt).

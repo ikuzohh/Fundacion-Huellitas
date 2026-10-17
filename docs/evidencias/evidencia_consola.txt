@@ -36,9 +36,9 @@
 ║ Sonido Característico: ¡Guau, guau!                          ║
 ╠════════════════════════════════════════════════════════════════════════╣
     --- HISTORIAL CLÍNICO (Composición) ---
-    • [17-10-2026 00:07] [IngresoYRescate] - Dx: Ingreso a las instalaciones de Fundación Huellitas tras rescate. | Tx: Evaluación clínica inicial preventiva. | Vet: Equipo Veterinario Huellitas | Costo: $0
-    • [17-10-2026 00:07] [ConsultaGeneral] - Dx: Control post-operatorio de esterilización y revisión dental. | Tx: Cicatrización limpia. Limpieza de tártaro dental realizada. | Vet: Dra. Camila Morales | Costo: $25.000
-    • [17-10-2026 00:07] [Vacunacion] - Dx: Inoculación de Vacuna Séxtuple Canina (Distemper, Parvovirus, Hepatitis, etc.) | Tx: Monitoreo de posibles reacciones durante 24 horas. | Vet: Dr. Felipe Valenzuela | Costo: $18.000
+    • [17-10-2026 01:41] [IngresoYRescate] - Dx: Ingreso a las instalaciones de Fundación Huellitas tras rescate. | Tx: Evaluación clínica inicial preventiva. | Vet: Equipo Veterinario Huellitas | Costo: $0
+    • [17-10-2026 01:41] [ConsultaGeneral] - Dx: Control post-operatorio de esterilización y revisión dental. | Tx: Cicatrización limpia. Limpieza de tártaro dental realizada. | Vet: Dra. Camila Morales | Costo: $25.000
+    • [17-10-2026 01:41] [Vacunacion] - Dx: Inoculación de Vacuna Séxtuple Canina (Distemper, Parvovirus, Hepatitis, etc.) | Tx: Monitoreo de posibles reacciones durante 24 horas. | Vet: Dr. Felipe Valenzuela | Costo: $18.000
 ╚════════════════════════════════════════════════════════════════════════╝
 
   [DEMOSTRACIÓN POLIMÓRFICA EN TIEMPO DE EJECUCIÓN]
@@ -60,9 +60,9 @@
 ║ Sonido Característico: ¡Miau, miau!                          ║
 ╠════════════════════════════════════════════════════════════════════════╣
     --- HISTORIAL CLÍNICO (Composición) ---
-    • [17-10-2026 00:07] [IngresoYRescate] - Dx: Ingreso a las instalaciones de Fundación Huellitas tras rescate. | Tx: Evaluación clínica inicial preventiva. | Vet: Equipo Veterinario Huellitas | Costo: $0
-    • [17-10-2026 00:07] [ConsultaGeneral] - Dx: Test rápido de Leucemia (FeLV) e Inmunodeficiencia Felina (FIV): Negativo | Tx: Apto para convivencia con otros felinos. | Vet: Dra. Camila Morales | Costo: $22.000
-    • [17-10-2026 00:07] [Vacunacion] - Dx: Inoculación de Vacuna Triple Felina (Panleucopenia, Rinotraqueitis, Calicivirus) | Tx: Refuerzo anual recomendado. | Vet: Dra. Camila Morales | Costo: $16.000
+    • [17-10-2026 01:41] [IngresoYRescate] - Dx: Ingreso a las instalaciones de Fundación Huellitas tras rescate. | Tx: Evaluación clínica inicial preventiva. | Vet: Equipo Veterinario Huellitas | Costo: $0
+    • [17-10-2026 01:41] [ConsultaGeneral] - Dx: Test rápido de Leucemia (FeLV) e Inmunodeficiencia Felina (FIV): Negativo | Tx: Apto para convivencia con otros felinos. | Vet: Dra. Camila Morales | Costo: $22.000
+    • [17-10-2026 01:41] [Vacunacion] - Dx: Inoculación de Vacuna Triple Felina (Panleucopenia, Rinotraqueitis, Calicivirus) | Tx: Refuerzo anual recomendado. | Vet: Dra. Camila Morales | Costo: $16.000
 ╚════════════════════════════════════════════════════════════════════════╝
 
   [DEMOSTRACIÓN POLIMÓRFICA EN TIEMPO DE EJECUCIÓN]
@@ -84,7 +84,7 @@
 ║ Sonido Característico: ¡Guau, guau!                          ║
 ╠════════════════════════════════════════════════════════════════════════╣
     --- HISTORIAL CLÍNICO (Composición) ---
-    • [17-10-2026 00:07] [IngresoYRescate] - Dx: Ingreso a las instalaciones de Fundación Huellitas tras rescate. | Tx: Evaluación clínica inicial preventiva. | Vet: Equipo Veterinario Huellitas | Costo: $0
+    • [17-10-2026 01:41] [IngresoYRescate] - Dx: Ingreso a las instalaciones de Fundación Huellitas tras rescate. | Tx: Evaluación clínica inicial preventiva. | Vet: Equipo Veterinario Huellitas | Costo: $0
 ╚════════════════════════════════════════════════════════════════════════╝
 
   [DEMOSTRACIÓN POLIMÓRFICA EN TIEMPO DE EJECUCIÓN]
@@ -106,7 +106,7 @@
 ║ Sonido Característico: ¡Miau, miau!                          ║
 ╠════════════════════════════════════════════════════════════════════════╣
     --- HISTORIAL CLÍNICO (Composición) ---
-    • [17-10-2026 00:07] [IngresoYRescate] - Dx: Ingreso a las instalaciones de Fundación Huellitas tras rescate. | Tx: Evaluación clínica inicial preventiva. | Vet: Equipo Veterinario Huellitas | Costo: $0
+    • [17-10-2026 01:41] [IngresoYRescate] - Dx: Ingreso a las instalaciones de Fundación Huellitas tras rescate. | Tx: Evaluación clínica inicial preventiva. | Vet: Equipo Veterinario Huellitas | Costo: $0
 ╚════════════════════════════════════════════════════════════════════════╝
 
   [DEMOSTRACIÓN POLIMÓRFICA EN TIEMPO DE EJECUCIÓN]
@@ -125,7 +125,7 @@ Animales albergados: 2 (Caninos: 1, Felinos: 1)
 Voluntarios activos: 1
 
 [ASOCIACIÓN]
-[SOL-3D9A20DF] Adoptante: Constanza Morales -> Animal: Michi (Felino (Felis catus)) | Estado: EntrevistaAgendada
+[SOL-A02E4671] Adoptante: Constanza Morales -> Animal: Michi (Felino (Felis catus)) | Estado: EntrevistaAgendada
 Estado actual de la solicitud: EntrevistaAgendada
 Observaciones del proceso: Pre-aprobada: Cumple perfil inicial. Entrevista agendada con la familia.
 

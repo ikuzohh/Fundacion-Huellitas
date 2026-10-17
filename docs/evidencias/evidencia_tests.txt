@@ -10,22 +10,35 @@ Iniciando la ejecución de pruebas, espere...
 C:\Users\ikuzo\OneDrive\Desktop\entrega final\src\FundacionHuellitas.Tests\bin\Debug\net8.0\FundacionHuellitas.Tests.dll
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.5.3.1+6b60a9e56a (64-bit .NET 8.0.32)
 [xUnit.net 00:00:00.05]   Discovering: FundacionHuellitas.Tests
-[xUnit.net 00:00:00.07]   Discovered:  FundacionHuellitas.Tests
-[xUnit.net 00:00:00.07]   Starting:    FundacionHuellitas.Tests
-  Correctas FundacionHuellitas.Tests.AnimalTests.Perro_Esterilizacion_NoPermiteRepetirse [5 ms]
+[xUnit.net 00:00:00.08]   Discovered:  FundacionHuellitas.Tests
+[xUnit.net 00:00:00.08]   Starting:    FundacionHuellitas.Tests
+  Correctas FundacionHuellitas.Tests.AuditoriaIntegracionTests.Refugio_NoDebeDuplicarAnimal_SiSeIngresaMasDeUnaVez [7 ms]
+  Correctas FundacionHuellitas.Tests.AnimalTests.Perro_Esterilizacion_NoPermiteRepetirse [6 ms]
   Correctas FundacionHuellitas.Tests.AnimalTests.Animal_DebeLanzarExcepcion_CuandoPesoEsCeroONegativo [< 1 ms]
   Correctas FundacionHuellitas.Tests.AnimalTests.Animal_DebeLanzarExcepcion_CuandoSexoEsInvalido [< 1 ms]
+  Correctas FundacionHuellitas.Tests.AuditoriaIntegracionTests.Adoptante_DebeLanzarExcepcion_SiCorreoNoTieneArroba [< 1 ms]
   Correctas FundacionHuellitas.Tests.AnimalTests.Animal_DebeLanzarExcepcion_CuandoNombreEsVacio [< 1 ms]
+  Correctas FundacionHuellitas.Tests.AuditoriaIntegracionTests.Refugio_DebeLanzarExcepcion_CuandoSeSuperaCapacidadMaxima [< 1 ms]
   Correctas FundacionHuellitas.Tests.AnimalTests.Animal_DebeActualizarEstadoSalud_Correctamente [1 ms]
-  Correctas FundacionHuellitas.Tests.ComposicionTests.Composicion_AnimalGestionaDirectamenteColeccionDeHistorialMedico [8 ms]
+  Correctas FundacionHuellitas.Tests.ComposicionTests.Composicion_AnimalGestionaDirectamenteColeccionDeHistorialMedico [11 ms]
   Correctas FundacionHuellitas.Tests.ComposicionTests.Composicion_HistorialClinicoProtegidoPorEncapsulamientoDefensivo [< 1 ms]
   Correctas FundacionHuellitas.Tests.ComposicionTests.Composicion_AnimalDebeInicializarHistorialClinicoConRegistroDeIngreso [1 ms]
-  Correctas FundacionHuellitas.Tests.PolimorfismoTests.Polimorfismo_EmitirFichaClinica_GeneraFormatoEspecializado [15 ms]
-[xUnit.net 00:00:00.14]   Finished:    FundacionHuellitas.Tests
+  Correctas FundacionHuellitas.Tests.AuditoriaIntegracionTests.SolicitudAdopcion_ConcretarAdopcion_FinalizaProcesoYActualizaEstado [8 ms]
+  Correctas FundacionHuellitas.Tests.AuditoriaIntegracionTests.Perro_AplicarVacunaSextuple_ActualizaBanderaYAgregaRegistroAlHistorial [< 1 ms]
+  Correctas FundacionHuellitas.Tests.AuditoriaIntegracionTests.SolicitudAdopcion_DebeMantenerEnEspera_SiAnimalAunNoEstaRehabilitado [< 1 ms]
+  Correctas FundacionHuellitas.Tests.AuditoriaIntegracionTests.Gato_RealizarTestFelvFiv_ActualizaResultadoYAgregaAtencionAlHistorial [< 1 ms]
+[xUnit.net 00:00:00.15]   Finished:    FundacionHuellitas.Tests
+  Correctas FundacionHuellitas.Tests.PolimorfismoTests.Polimorfismo_EmitirFichaClinica_GeneraFormatoEspecializado [19 ms]
+  Correctas FundacionHuellitas.Tests.AuditoriaIntegracionTests.SolicitudAdopcion_DebeAgendarEntrevista_CuandoAnimalEstaAptoYPerfilCumple [< 1 ms]
+  Correctas FundacionHuellitas.Tests.AuditoriaIntegracionTests.Composicion_HistorialClinico_NoPuedeCastearseAListaMutable [< 1 ms]
+  Correctas FundacionHuellitas.Tests.AuditoriaIntegracionTests.Animal_CalcularDosis_DebeLanzarExcepcion_CuandoFactorEsCeroONegativo [< 1 ms]
   Correctas FundacionHuellitas.Tests.PolimorfismoTests.Polimorfismo_CalculoDosis_AplicaFactoresDiferenciadosPorEspecie [1 ms]
+  Correctas FundacionHuellitas.Tests.AuditoriaIntegracionTests.Voluntario_DebeLanzarExcepcion_SiHorasSemanalesSonNegativas [< 1 ms]
   Correctas FundacionHuellitas.Tests.PolimorfismoTests.Polimorfismo_ColeccionHeterogenea_ResuelveSonidoSegunSubclase [< 1 ms]
+  Correctas FundacionHuellitas.Tests.AuditoriaIntegracionTests.SolicitudAdopcion_DebeRechazarGato_SiViviendaNoTieneMallasDeSeguridad [< 1 ms]
+  Correctas FundacionHuellitas.Tests.AuditoriaIntegracionTests.Refugio_DebeContarEspeciesCorrectamente_MedianteMetodoGenerico [< 1 ms]
 
 La serie de pruebas se ejecutó correctamente.
-Pruebas totales: 11
-     Correcto: 11
- Tiempo total: 0,4592 Segundos
+Pruebas totales: 24
+     Correcto: 24
+ Tiempo total: 0,4950 Segundos

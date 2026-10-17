@@ -278,11 +278,12 @@ def create_report():
     h5.paragraph_format.space_after = Pt(6)
 
     doc.add_paragraph(
-        "Para garantizar los 15 puntos del criterio 'Pruebas y Verificación Automatizada', se desarrolló una suite completa "
-        "de 11 pruebas unitarias automatizadas con xUnit, cubriendo validaciones defensivas, composición y polimorfismo:"
+        "Para garantizar los 15 puntos del criterio 'Pruebas y Verificación Automatizada' y certificar una arquitectura libre de errores, "
+        "se auditó el código y se desarrolló una suite integral de 24 pruebas unitarias automatizadas con xUnit, cubriendo validaciones defensivas, "
+        "composición estricta, polimorfismo dinámico, flujo transaccional de adopción y límites de agregación en el refugio:"
     )
 
-    test_table = doc.add_table(rows=12, cols=3)
+    test_table = doc.add_table(rows=25, cols=3)
     test_table.alignment = WD_TABLE_ALIGNMENT.CENTER
     test_table.autofit = False
 
@@ -308,7 +309,20 @@ def create_report():
         ("ComposicionTests", "Composicion_HistorialClinicoProtegidoPorEncapsulamientoDefensivo", "✔ Correcto (Aprobado)"),
         ("PolimorfismoTests", "Polimorfismo_ColeccionHeterogenea_ResuelveSonidoSegunSubclase", "✔ Correcto (Aprobado)"),
         ("PolimorfismoTests", "Polimorfismo_CalculoDosis_AplicaFactoresDiferenciadosPorEspecie", "✔ Correcto (Aprobado)"),
-        ("PolimorfismoTests", "Polimorfismo_EmitirFichaClinica_GeneraFormatoEspecializado", "✔ Correcto (Aprobado)")
+        ("PolimorfismoTests", "Polimorfismo_EmitirFichaClinica_GeneraFormatoEspecializado", "✔ Correcto (Aprobado)"),
+        ("AuditoriaIntegracion", "SolicitudAdopcion_DebeRechazarGato_SiViviendaNoTieneMallasDeSeguridad", "✔ Correcto (Aprobado)"),
+        ("AuditoriaIntegracion", "SolicitudAdopcion_DebeAgendarEntrevista_CuandoAnimalEstaAptoYPerfilCumple", "✔ Correcto (Aprobado)"),
+        ("AuditoriaIntegracion", "SolicitudAdopcion_DebeMantenerEnEspera_SiAnimalAunNoEstaRehabilitado", "✔ Correcto (Aprobado)"),
+        ("AuditoriaIntegracion", "SolicitudAdopcion_ConcretarAdopcion_FinalizaProcesoYActualizaEstado", "✔ Correcto (Aprobado)"),
+        ("AuditoriaIntegracion", "Refugio_DebeLanzarExcepcion_CuandoSeSuperaCapacidadMaxima", "✔ Correcto (Aprobado)"),
+        ("AuditoriaIntegracion", "Refugio_NoDebeDuplicarAnimal_SiSeIngresaMasDeUnaVez", "✔ Correcto (Aprobado)"),
+        ("AuditoriaIntegracion", "Refugio_DebeContarEspeciesCorrectamente_MedianteMetodoGenerico", "✔ Correcto (Aprobado)"),
+        ("AuditoriaIntegracion", "Adoptante_DebeLanzarExcepcion_SiCorreoNoTieneArroba", "✔ Correcto (Aprobado)"),
+        ("AuditoriaIntegracion", "Voluntario_DebeLanzarExcepcion_SiHorasSemanalesSonNegativas", "✔ Correcto (Aprobado)"),
+        ("AuditoriaIntegracion", "Composicion_HistorialClinico_NoPuedeCastearseAListaMutable", "✔ Correcto (Aprobado)"),
+        ("AuditoriaIntegracion", "Animal_CalcularDosis_DebeLanzarExcepcion_CuandoFactorEsCeroONegativo", "✔ Correcto (Aprobado)"),
+        ("AuditoriaIntegracion", "Perro_AplicarVacunaSextuple_ActualizaBanderaYAgregaRegistroAlHistorial", "✔ Correcto (Aprobado)"),
+        ("AuditoriaIntegracion", "Gato_RealizarTestFelvFiv_ActualizaResultadoYAgregaAtencionAlHistorial", "✔ Correcto (Aprobado)")
     ]
 
     for idx, row in enumerate(test_data):
