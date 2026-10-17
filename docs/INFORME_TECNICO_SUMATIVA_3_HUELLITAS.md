@@ -14,6 +14,7 @@
 | **Estudiante:** | **Pablo Esteban Herrera Bustamante** |
 | **Correo Electrónico:** | **ikuzoherrera@gmail.com** |
 | **Docente / Profesora:** | **MARÍA UBILLA SALINAS** |
+| **Repositorio GitHub:** | [https://github.com/ikuzohh/Fundacion-Huellitas](https://github.com/ikuzohh/Fundacion-Huellitas) |
 | **Tecnología Implementada:** | C# (.NET 8.0) — Arquitectura en Capas y Pruebas xUnit |
 | **Estado de Entrega:** | Completo — 100 Puntos (Exigencia 60% para Nota 4.0) |
 

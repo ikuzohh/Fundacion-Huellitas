@@ -69,7 +69,7 @@ def create_report():
     run_sub.font.color.rgb = RGBColor(2, 132, 199)
 
     # TABLA METADATOS
-    meta_table = doc.add_table(rows=9, cols=2)
+    meta_table = doc.add_table(rows=10, cols=2)
     meta_table.alignment = WD_TABLE_ALIGNMENT.CENTER
     meta_table.autofit = False
 
@@ -82,6 +82,7 @@ def create_report():
         ("Caso y Desafío:", "Opción A: Fundación Huellitas + Demostración Polimórfica en C# (.NET 8)"),
         ("Modalidad:", "Individual (Estudiante Autónomo)"),
         ("Criterios de Evaluación:", "C.E. 1.8 (Relaciones UML), C.E. 1.9 (Requerimientos), POO Avanzada"),
+        ("Repositorio GitHub:", "https://github.com/ikuzohh/Fundacion-Huellitas"),
         ("Puntaje Máximo Esperado:", "100 Puntos (Exigencia 60% para Nota 4.0)")
     ]
 
