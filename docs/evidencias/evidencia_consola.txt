@@ -1,0 +1,136 @@
+﻿╔══════════════════════════════════════════════════════════════════════════════╗
+║                 INSTITUTO PROFESIONAL AIEP - ESCUELA TIC                     ║
+║            MÓDULO: TALLER DE PROGRAMACIÓN (PRO205) - CICLO 2026              ║
+║         EVALUACIÓN SUMATIVA N° 3 / ARTICULACIÓN ENE - CASO HUELLITAS         ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+================================================================================
+ 1. MODELO DE DOMINIO: HERENCIA Y ESPECIALIZACIÓN (ANIMAL -> PERRO / GATO)
+================================================================================
+
+================================================================================
+ 2. DEMOSTRACIÓN DE COMPOSICIÓN EN CÓDIGO (Animal *-- HistorialMedico)
+    * El ciclo de vida de cada HistorialMedico depende 100% de la instancia Animal.
+    * Se administran exclusivamente mediante métodos miembros de Animal.
+================================================================================
+✔ Se agregaron atenciones al historial médico de Rocky (3 registros).
+✔ Se agregaron atenciones al historial médico de Michi (3 registros).
+✔ Encapsulamiento defensivo: HistorialClinico expone 'IReadOnlyList' para impedir manipulaciones externas.
+
+================================================================================
+ 3. POLIMORFISMO DINÁMICO EN CONSOLA (Colección Heterogénea List<Animal>)
+    * Se procesan instancias de Perro y Gato a través de la referencia abstracta Animal.
+    * Los métodos EmitirFichaClinica(), HacerSonidoCaracteristico() y
+      CalcularDosisMedicamento() se resuelven dinámicamente en tiempo de ejecución.
+================================================================================
+
+╔════════════════════════════════════════════════════════════════════════╗
+║ FICHA CLÍNICA CANINA - FUNDACIÓN HUELLITAS                           ║
+╠════════════════════════════════════════════════════════════════════════╣
+║ Código: CAN-001              Nombre: Rocky                    ║
+║ Especie: Canino (Canis lupus familiaris)        Raza: Quiltro Mestizo║
+║ Edad: 24 meses | Peso: 18,5 kg | Sexo: MACHO     ║
+║ Estado Clínico: AptoParaAdopcion     Esterilizado: SÍ   ║
+║ Nivel de Energía: Alta            Apto con Niños: SÍ   ║
+║ Protocolo Canino: Vacuna Séxtuple: Al día          Paseo: Diario ║
+║ Sonido Característico: ¡Guau, guau!                          ║
+╠════════════════════════════════════════════════════════════════════════╣
+    --- HISTORIAL CLÍNICO (Composición) ---
+    • [17-10-2026 00:07] [IngresoYRescate] - Dx: Ingreso a las instalaciones de Fundación Huellitas tras rescate. | Tx: Evaluación clínica inicial preventiva. | Vet: Equipo Veterinario Huellitas | Costo: $0
+    • [17-10-2026 00:07] [ConsultaGeneral] - Dx: Control post-operatorio de esterilización y revisión dental. | Tx: Cicatrización limpia. Limpieza de tártaro dental realizada. | Vet: Dra. Camila Morales | Costo: $25.000
+    • [17-10-2026 00:07] [Vacunacion] - Dx: Inoculación de Vacuna Séxtuple Canina (Distemper, Parvovirus, Hepatitis, etc.) | Tx: Monitoreo de posibles reacciones durante 24 horas. | Vet: Dr. Felipe Valenzuela | Costo: $18.000
+╚════════════════════════════════════════════════════════════════════════╝
+
+  [DEMOSTRACIÓN POLIMÓRFICA EN TIEMPO DE EJECUCIÓN]
+  • Tipo Concreto: Perro
+  • Sonido Polimórfico: ¡Guau, guau!
+  • Cálculo Farmacológico Polimórfico (Dosis Base 10 mg/kg): 185 mg
+    (Explicación: Los caninos calculan directamente por peso; los felinos aplican factor de ajuste renal del 85%).
+--------------------------------------------------------------------------------
+
+╔════════════════════════════════════════════════════════════════════════╗
+║ FICHA CLÍNICA FELINA - FUNDACIÓN HUELLITAS                           ║
+╠════════════════════════════════════════════════════════════════════════╣
+║ Código: FEL-002              Nombre: Michi                    ║
+║ Especie: Felino (Felis catus)                   Pelaje: Calicó / Corto║
+║ Edad: 14 meses | Peso: 4,2 kg | Sexo: HEMBRA    ║
+║ Estado Clínico: AptoParaAdopcion     Esterilizado: SÍ   ║
+║ Estilo de Vida: Indoor Exclusivo   Test FeLV/FIV: Negativo    ║
+║ Protocolo Felino: Vacuna Triple: Al día       Mallas: Requeridas ║
+║ Sonido Característico: ¡Miau, miau!                          ║
+╠════════════════════════════════════════════════════════════════════════╣
+    --- HISTORIAL CLÍNICO (Composición) ---
+    • [17-10-2026 00:07] [IngresoYRescate] - Dx: Ingreso a las instalaciones de Fundación Huellitas tras rescate. | Tx: Evaluación clínica inicial preventiva. | Vet: Equipo Veterinario Huellitas | Costo: $0
+    • [17-10-2026 00:07] [ConsultaGeneral] - Dx: Test rápido de Leucemia (FeLV) e Inmunodeficiencia Felina (FIV): Negativo | Tx: Apto para convivencia con otros felinos. | Vet: Dra. Camila Morales | Costo: $22.000
+    • [17-10-2026 00:07] [Vacunacion] - Dx: Inoculación de Vacuna Triple Felina (Panleucopenia, Rinotraqueitis, Calicivirus) | Tx: Refuerzo anual recomendado. | Vet: Dra. Camila Morales | Costo: $16.000
+╚════════════════════════════════════════════════════════════════════════╝
+
+  [DEMOSTRACIÓN POLIMÓRFICA EN TIEMPO DE EJECUCIÓN]
+  • Tipo Concreto: Gato
+  • Sonido Polimórfico: ¡Miau, miau!
+  • Cálculo Farmacológico Polimórfico (Dosis Base 10 mg/kg): 35,7 mg
+    (Explicación: Los caninos calculan directamente por peso; los felinos aplican factor de ajuste renal del 85%).
+--------------------------------------------------------------------------------
+
+╔════════════════════════════════════════════════════════════════════════╗
+║ FICHA CLÍNICA CANINA - FUNDACIÓN HUELLITAS                           ║
+╠════════════════════════════════════════════════════════════════════════╣
+║ Código: CAN-003              Nombre: Luna                     ║
+║ Especie: Canino (Canis lupus familiaris)        Raza: Pastor Alemán Mix║
+║ Edad: 8 meses | Peso: 12 kg | Sexo: HEMBRA    ║
+║ Estado Clínico: EnTratamiento        Esterilizado: NO   ║
+║ Nivel de Energía: Muy Alta        Apto con Niños: SÍ   ║
+║ Protocolo Canino: Vacuna Séxtuple: Pendiente       Paseo: Diario ║
+║ Sonido Característico: ¡Guau, guau!                          ║
+╠════════════════════════════════════════════════════════════════════════╣
+    --- HISTORIAL CLÍNICO (Composición) ---
+    • [17-10-2026 00:07] [IngresoYRescate] - Dx: Ingreso a las instalaciones de Fundación Huellitas tras rescate. | Tx: Evaluación clínica inicial preventiva. | Vet: Equipo Veterinario Huellitas | Costo: $0
+╚════════════════════════════════════════════════════════════════════════╝
+
+  [DEMOSTRACIÓN POLIMÓRFICA EN TIEMPO DE EJECUCIÓN]
+  • Tipo Concreto: Perro
+  • Sonido Polimórfico: ¡Guau, guau!
+  • Cálculo Farmacológico Polimórfico (Dosis Base 10 mg/kg): 120 mg
+    (Explicación: Los caninos calculan directamente por peso; los felinos aplican factor de ajuste renal del 85%).
+--------------------------------------------------------------------------------
+
+╔════════════════════════════════════════════════════════════════════════╗
+║ FICHA CLÍNICA FELINA - FUNDACIÓN HUELLITAS                           ║
+╠════════════════════════════════════════════════════════════════════════╣
+║ Código: FEL-004              Nombre: Oliver                   ║
+║ Especie: Felino (Felis catus)                   Pelaje: Atigrado Gris║
+║ Edad: 36 meses | Peso: 5,1 kg | Sexo: MACHO     ║
+║ Estado Clínico: Estable              Esterilizado: SÍ   ║
+║ Estilo de Vida: Indoor Exclusivo   Test FeLV/FIV: Negativo    ║
+║ Protocolo Felino: Vacuna Triple: Pendiente    Mallas: Requeridas ║
+║ Sonido Característico: ¡Miau, miau!                          ║
+╠════════════════════════════════════════════════════════════════════════╣
+    --- HISTORIAL CLÍNICO (Composición) ---
+    • [17-10-2026 00:07] [IngresoYRescate] - Dx: Ingreso a las instalaciones de Fundación Huellitas tras rescate. | Tx: Evaluación clínica inicial preventiva. | Vet: Equipo Veterinario Huellitas | Costo: $0
+╚════════════════════════════════════════════════════════════════════════╝
+
+  [DEMOSTRACIÓN POLIMÓRFICA EN TIEMPO DE EJECUCIÓN]
+  • Tipo Concreto: Gato
+  • Sonido Polimórfico: ¡Miau, miau!
+  • Cálculo Farmacológico Polimórfico (Dosis Base 10 mg/kg): 43,35 mg
+    (Explicación: Los caninos calculan directamente por peso; los felinos aplican factor de ajuste renal del 85%).
+--------------------------------------------------------------------------------
+
+================================================================================
+ 4. DEMOSTRACIÓN DE AGREGACIÓN Y ASOCIACIÓN
+================================================================================
+[AGREGACIÓN]
+Sede: Refugio Central Santiago - Capacidad: 30
+Animales albergados: 2 (Caninos: 1, Felinos: 1)
+Voluntarios activos: 1
+
+[ASOCIACIÓN]
+[SOL-3D9A20DF] Adoptante: Constanza Morales -> Animal: Michi (Felino (Felis catus)) | Estado: EntrevistaAgendada
+Estado actual de la solicitud: EntrevistaAgendada
+Observaciones del proceso: Pre-aprobada: Cumple perfil inicial. Entrevista agendada con la familia.
+
+✔ Adopción concretada con éxito. Contrato firmado. Compromiso de seguimiento post-adopción a los 30 y 90 días.
+
+================================================================================
+ FIN DE LA DEMOSTRACIÓN - SISTEMA FUNDACIÓN HUELLITAS
+================================================================================

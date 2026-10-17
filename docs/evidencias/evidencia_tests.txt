@@ -1,0 +1,31 @@
+﻿  Determinando los proyectos que se van a restaurar...
+  Todos los proyectos están actualizados para la restauración.
+  FundacionHuellitas.Core -> C:\Users\ikuzo\OneDrive\Desktop\entrega final\src\FundacionHuellitas.Core\bin\Debug\net8.0\FundacionHuellitas.Core.dll
+  FundacionHuellitas.Tests -> C:\Users\ikuzo\OneDrive\Desktop\entrega final\src\FundacionHuellitas.Tests\bin\Debug\net8.0\FundacionHuellitas.Tests.dll
+Serie de pruebas para C:\Users\ikuzo\OneDrive\Desktop\entrega final\src\FundacionHuellitas.Tests\bin\Debug\net8.0\FundacionHuellitas.Tests.dll (.NETCoreApp,Version=v8.0)
+Versión 17.11.1 (x64) de VSTest
+
+Iniciando la ejecución de pruebas, espere...
+1 archivos de prueba en total coincidieron con el patrón especificado.
+C:\Users\ikuzo\OneDrive\Desktop\entrega final\src\FundacionHuellitas.Tests\bin\Debug\net8.0\FundacionHuellitas.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.5.3.1+6b60a9e56a (64-bit .NET 8.0.32)
+[xUnit.net 00:00:00.05]   Discovering: FundacionHuellitas.Tests
+[xUnit.net 00:00:00.07]   Discovered:  FundacionHuellitas.Tests
+[xUnit.net 00:00:00.07]   Starting:    FundacionHuellitas.Tests
+  Correctas FundacionHuellitas.Tests.AnimalTests.Perro_Esterilizacion_NoPermiteRepetirse [5 ms]
+  Correctas FundacionHuellitas.Tests.AnimalTests.Animal_DebeLanzarExcepcion_CuandoPesoEsCeroONegativo [< 1 ms]
+  Correctas FundacionHuellitas.Tests.AnimalTests.Animal_DebeLanzarExcepcion_CuandoSexoEsInvalido [< 1 ms]
+  Correctas FundacionHuellitas.Tests.AnimalTests.Animal_DebeLanzarExcepcion_CuandoNombreEsVacio [< 1 ms]
+  Correctas FundacionHuellitas.Tests.AnimalTests.Animal_DebeActualizarEstadoSalud_Correctamente [1 ms]
+  Correctas FundacionHuellitas.Tests.ComposicionTests.Composicion_AnimalGestionaDirectamenteColeccionDeHistorialMedico [8 ms]
+  Correctas FundacionHuellitas.Tests.ComposicionTests.Composicion_HistorialClinicoProtegidoPorEncapsulamientoDefensivo [< 1 ms]
+  Correctas FundacionHuellitas.Tests.ComposicionTests.Composicion_AnimalDebeInicializarHistorialClinicoConRegistroDeIngreso [1 ms]
+  Correctas FundacionHuellitas.Tests.PolimorfismoTests.Polimorfismo_EmitirFichaClinica_GeneraFormatoEspecializado [15 ms]
+[xUnit.net 00:00:00.14]   Finished:    FundacionHuellitas.Tests
+  Correctas FundacionHuellitas.Tests.PolimorfismoTests.Polimorfismo_CalculoDosis_AplicaFactoresDiferenciadosPorEspecie [1 ms]
+  Correctas FundacionHuellitas.Tests.PolimorfismoTests.Polimorfismo_ColeccionHeterogenea_ResuelveSonidoSegunSubclase [< 1 ms]
+
+La serie de pruebas se ejecutó correctamente.
+Pruebas totales: 11
+     Correcto: 11
+ Tiempo total: 0,4592 Segundos
