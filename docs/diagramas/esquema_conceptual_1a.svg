@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 620" width="100%" height="100%">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 620" width="950" height="620">
   <defs>
     <style>
       .title { font-family: 'Segoe UI', Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #1e293b; }
@@ -7,7 +8,7 @@
       .class-stereo { font-family: 'Segoe UI', Arial, sans-serif; font-size: 11px; font-style: italic; fill: #475569; }
       .class-body { font-family: 'Consolas', monospace; font-size: 11.5px; fill: #334155; }
       .rel-label { font-family: 'Segoe UI', Arial, sans-serif; font-size: 11px; font-weight: 600; fill: #0f766e; }
-      .box { rx: 6px; ry: 6px; stroke-width: 1.5; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.06)); }
+      .card-box { stroke-width: 1.5; }
     </style>
     <!-- Marcadores UML -->
     <marker id="arrow-inherit" markerWidth="14" markerHeight="14" refX="13" refY="7" orient="auto">
@@ -28,14 +29,14 @@
   <rect width="950" height="620" fill="#f8fafc" />
 
   <!-- Encabezado -->
-  <rect x="25" y="15" width="900" height="55" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" />
+  <rect x="25" y="15" width="900" height="55" rx="8" ry="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" />
   <text x="45" y="38" class="title">SUBTAREA 1A: Esquema Conceptual Preliminar - Fundación Huellitas</text>
   <text x="45" y="56" class="subtitle">Identificación de entidades clave y justificación técnica de 4 relaciones fundamentales de POO</text>
 
   <!-- 1. Superclase Animal (Centro) -->
   <g transform="translate(360, 95)">
-    <rect class="box" width="230" height="110" fill="#eff6ff" stroke="#2563eb" />
-    <rect width="230" height="35" rx="6" fill="#dbeafe" stroke="#2563eb" />
+    <rect class="card-box" width="230" height="110" rx="6" ry="6" fill="#eff6ff" stroke="#2563eb" />
+    <rect width="230" height="35" rx="6" ry="6" fill="#dbeafe" stroke="#2563eb" />
     <text x="115" y="18" text-anchor="middle" class="class-stereo">&lt;&lt;abstract&gt;&gt;</text>
     <text x="115" y="31" text-anchor="middle" class="class-title">Animal</text>
     <line x1="0" y1="35" x2="230" y2="35" stroke="#2563eb" stroke-width="1" />
@@ -49,8 +50,8 @@
   <!-- 2. Subclases Herencia: Perro y Gato -->
   <!-- Perro -->
   <g transform="translate(250, 260)">
-    <rect class="box" width="200" height="85" fill="#f0fdf4" stroke="#16a34a" />
-    <rect width="200" height="26" rx="6" fill="#dcfce7" stroke="#16a34a" />
+    <rect class="card-box" width="200" height="85" rx="6" ry="6" fill="#f0fdf4" stroke="#16a34a" />
+    <rect width="200" height="26" rx="6" ry="6" fill="#dcfce7" stroke="#16a34a" />
     <text x="100" y="18" text-anchor="middle" class="class-title">Perro</text>
     <line x1="0" y1="26" x2="200" y2="26" stroke="#16a34a" stroke-width="1" />
     <text x="10" y="42" class="class-body">• raza, nivelEnergia, aptoNinos</text>
@@ -61,8 +62,8 @@
 
   <!-- Gato -->
   <g transform="translate(500, 260)">
-    <rect class="box" width="200" height="85" fill="#f0fdf4" stroke="#16a34a" />
-    <rect width="200" height="26" rx="6" fill="#dcfce7" stroke="#16a34a" />
+    <rect class="card-box" width="200" height="85" rx="6" ry="6" fill="#f0fdf4" stroke="#16a34a" />
+    <rect width="200" height="26" rx="6" ry="6" fill="#dcfce7" stroke="#16a34a" />
     <text x="100" y="18" text-anchor="middle" class="class-title">Gato</text>
     <line x1="0" y1="26" x2="200" y2="26" stroke="#16a34a" stroke-width="1" />
     <text x="10" y="42" class="class-body">• testFelvFiv, esIndoor, pelaje</text>
@@ -71,16 +72,16 @@
     <text x="10" y="78" class="class-body">+ RealizarTestFelvFiv()</text>
   </g>
 
-  <!-- Conexión Herencia (Perro y Gato -> Animal) -->
+  <!-- Conexión Herencia (Perro y Gato a Animal) -->
   <path d="M 350,260 L 350,230 L 475,230 L 475,205" fill="none" stroke="#1e40af" stroke-width="1.8" marker-end="url(#arrow-inherit)" />
   <path d="M 600,260 L 600,230 L 475,230" fill="none" stroke="#1e40af" stroke-width="1.8" />
-  <rect x="420" y="215" width="110" height="18" rx="4" fill="#ffffff" stroke="#93c5fd" />
+  <rect x="420" y="215" width="110" height="18" rx="4" ry="4" fill="#ffffff" stroke="#93c5fd" />
   <text x="475" y="228" text-anchor="middle" class="rel-label" fill="#1e40af">1. HERENCIA</text>
 
   <!-- 3. Composición: HistorialMedico -->
   <g transform="translate(710, 95)">
-    <rect class="box" width="215" height="110" fill="#fef2f2" stroke="#dc2626" />
-    <rect width="215" height="26" rx="6" fill="#fee2e2" stroke="#dc2626" />
+    <rect class="card-box" width="215" height="110" rx="6" ry="6" fill="#fef2f2" stroke="#dc2626" />
+    <rect width="215" height="26" rx="6" ry="6" fill="#fee2e2" stroke="#dc2626" />
     <text x="107" y="18" text-anchor="middle" class="class-title">HistorialMedico</text>
     <line x1="0" y1="26" x2="215" y2="26" stroke="#dc2626" stroke-width="1" />
     <text x="10" y="42" class="class-body">• idAtencion, fecha, tipo</text>
@@ -90,17 +91,17 @@
     <text x="10" y="98" class="class-body">+ ObtenerFichaResumida()</text>
   </g>
 
-  <!-- Línea Composición (Animal *-- HistorialMedico) -->
+  <!-- Línea Composición (Animal con HistorialMedico) -->
   <line x1="590" y1="150" x2="710" y2="150" stroke="#b91c1c" stroke-width="2" marker-start="url(#diamond-comp)" />
-  <rect x="605" y="125" width="95" height="20" rx="4" fill="#ffffff" stroke="#fca5a5" />
+  <rect x="605" y="125" width="95" height="20" rx="4" ry="4" fill="#ffffff" stroke="#fca5a5" />
   <text x="652" y="139" text-anchor="middle" class="rel-label" fill="#b91c1c">2. COMPOSICIÓN</text>
   <text x="600" y="165" font-size="11" font-weight="bold" fill="#b91c1c">1</text>
   <text x="695" y="165" font-size="11" font-weight="bold" fill="#b91c1c">1..*</text>
 
   <!-- 4. Agregación: Refugio (Izquierda) -->
   <g transform="translate(30, 95)">
-    <rect class="box" width="200" height="95" fill="#f5f3ff" stroke="#6366f1" />
-    <rect width="200" height="26" rx="6" fill="#ede9fe" stroke="#6366f1" />
+    <rect class="card-box" width="200" height="95" rx="6" ry="6" fill="#f5f3ff" stroke="#6366f1" />
+    <rect width="200" height="26" rx="6" ry="6" fill="#ede9fe" stroke="#6366f1" />
     <text x="100" y="18" text-anchor="middle" class="class-title">Refugio</text>
     <line x1="0" y1="26" x2="200" y2="26" stroke="#6366f1" stroke-width="1" />
     <text x="10" y="42" class="class-body">• nombreSede, direccion</text>
@@ -109,17 +110,17 @@
     <text x="10" y="80" class="class-body">+ RecibirAnimal(Animal)</text>
   </g>
 
-  <!-- Línea Agregación (Refugio o-- Animal) -->
+  <!-- Línea Agregación (Refugio con Animal) -->
   <line x1="230" y1="140" x2="360" y2="140" stroke="#4338ca" stroke-width="2" marker-start="url(#diamond-aggr)" />
-  <rect x="245" y="115" width="100" height="20" rx="4" fill="#ffffff" stroke="#c7d2fe" />
+  <rect x="245" y="115" width="100" height="20" rx="4" ry="4" fill="#ffffff" stroke="#c7d2fe" />
   <text x="295" y="129" text-anchor="middle" class="rel-label" fill="#4338ca">3. AGREGACIÓN</text>
   <text x="240" y="155" font-size="11" font-weight="bold" fill="#4338ca">1</text>
   <text x="345" y="155" font-size="11" font-weight="bold" fill="#4338ca">0..*</text>
 
   <!-- 5. Voluntario (Abajo Izquierda) -->
   <g transform="translate(30, 270)">
-    <rect class="box" width="190" height="85" fill="#faf5ff" stroke="#a855f7" />
-    <rect width="190" height="26" rx="6" fill="#f3e8ff" stroke="#a855f7" />
+    <rect class="card-box" width="190" height="85" rx="6" ry="6" fill="#faf5ff" stroke="#a855f7" />
+    <rect width="190" height="26" rx="6" ry="6" fill="#f3e8ff" stroke="#a855f7" />
     <text x="95" y="18" text-anchor="middle" class="class-title">Voluntario</text>
     <line x1="0" y1="26" x2="190" y2="26" stroke="#a855f7" stroke-width="1" />
     <text x="10" y="42" class="class-body">• rut, nombreCompleto, rol</text>
@@ -128,15 +129,15 @@
     <text x="10" y="79" class="class-body">+ ObtenerResumen()</text>
   </g>
 
-  <!-- Línea Agregación (Refugio o-- Voluntario) -->
+  <!-- Línea Agregación (Refugio con Voluntario) -->
   <line x1="125" y1="190" x2="125" y2="270" stroke="#4338ca" stroke-width="1.8" marker-start="url(#diamond-aggr)" />
   <text x="135" y="235" class="rel-label" fill="#4338ca">Agregación</text>
 
   <!-- 6. Asociación: SolicitudAdopcion y Adoptante (Parte Inferior) -->
   <!-- Adoptante -->
   <g transform="translate(710, 420)">
-    <rect class="box" width="215" height="100" fill="#ecfdf5" stroke="#059669" />
-    <rect width="215" height="26" rx="6" fill="#d1fae5" stroke="#059669" />
+    <rect class="card-box" width="215" height="100" rx="6" ry="6" fill="#ecfdf5" stroke="#059669" />
+    <rect width="215" height="26" rx="6" ry="6" fill="#d1fae5" stroke="#059669" />
     <text x="107" y="18" text-anchor="middle" class="class-title">Adoptante</text>
     <line x1="0" y1="26" x2="215" y2="26" stroke="#059669" stroke-width="1" />
     <text x="10" y="42" class="class-body">• rut, nombre, telefono, correo</text>
@@ -147,8 +148,8 @@
 
   <!-- SolicitudAdopcion -->
   <g transform="translate(360, 415)">
-    <rect class="box" width="230" height="110" fill="#fdf4ff" stroke="#c026d3" />
-    <rect width="230" height="26" rx="6" fill="#fae8ff" stroke="#c026d3" />
+    <rect class="card-box" width="230" height="110" rx="6" ry="6" fill="#fdf4ff" stroke="#c026d3" />
+    <rect width="230" height="26" rx="6" ry="6" fill="#fae8ff" stroke="#c026d3" />
     <text x="115" y="18" text-anchor="middle" class="class-title">SolicitudAdopcion</text>
     <line x1="0" y1="26" x2="230" y2="26" stroke="#c026d3" stroke-width="1" />
     <text x="10" y="42" class="class-body">• idSolicitud, fechaPostulacion</text>
@@ -159,22 +160,22 @@
   </g>
 
   <!-- Conexiones Asociación -->
-  <!-- SolicitudAdopcion -> Adoptante -->
+  <!-- SolicitudAdopcion a Adoptante -->
   <line x1="590" y1="470" x2="710" y2="470" stroke="#047857" stroke-width="1.8" marker-end="url(#arrow-assoc)" />
-  <rect x="615" y="450" width="85" height="18" rx="4" fill="#ffffff" stroke="#a7f3d0" />
+  <rect x="615" y="450" width="85" height="18" rx="4" ry="4" fill="#ffffff" stroke="#a7f3d0" />
   <text x="657" y="463" text-anchor="middle" class="rel-label" fill="#047857">4. ASOCIACIÓN</text>
 
-  <!-- SolicitudAdopcion -> Animal -->
+  <!-- SolicitudAdopcion a Animal -->
   <path d="M 475,415 L 475,370 L 475,205" fill="none" stroke="#047857" stroke-width="1.8" stroke-dasharray="4,4" marker-end="url(#arrow-assoc)" />
 
-  <!-- SolicitudAdopcion -> Voluntario -->
+  <!-- SolicitudAdopcion a Voluntario -->
   <path d="M 360,470 L 125,470 L 125,355" fill="none" stroke="#047857" stroke-width="1.8" marker-end="url(#arrow-assoc)" />
 
   <!-- Cuadro Informativo / Leyenda Rúbrica -->
   <g transform="translate(25, 545)">
-    <rect width="900" height="60" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
-    <text x="20" y="24" font-family="'Segoe UI', Arial" font-size="12" font-weight="bold" fill="#1e293b">RESUMEN TÉCNICO DE LAS 4 RELACIONES MODELADAS (C.E. 1.8):</text>
-    <text x="20" y="44" font-family="'Segoe UI', Arial" font-size="11.5" fill="#475569">
+    <rect width="900" height="60" rx="6" ry="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+    <text x="20" y="24" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="bold" fill="#1e293b">RESUMEN TÉCNICO DE LAS 4 RELACIONES MODELADAS (C.E. 1.8):</text>
+    <text x="20" y="44" font-family="'Segoe UI', Arial, sans-serif" font-size="11.5" fill="#475569">
       1. Herencia: Animal (base) a Perro/Gato | 2. Composición: Animal posee HistorialMedico (vida ligada) | 3. Agregación: Refugio contiene Animal y Voluntario | 4. Asociación: Solicitud vincula Adoptante, Animal y Voluntario
     </text>
   </g>
