@@ -1,11 +1,6 @@
 ```mermaid
 classDiagram
     direction TB
-    
-    note for Animal "Superclase Abstracta\nPatrón Dominio POO"
-    note for HistorialMedico "COMPOSICIÓN ESTRICTA (1..*)\nCiclo de vida gobernado por Animal"
-    note for Refugio "AGREGACIÓN\nAnimales y Voluntarios existen independientemente"
-    note for SolicitudAdopcion "ASOCIACIÓN\nVincula Adoptante, Animal y Voluntario"
 
     class Animal {
         <<abstract>>
@@ -25,13 +20,13 @@ classDiagram
         +DateTime FechaIngreso
         +bool EstaEsterilizado
         +IReadOnlyList~HistorialMedico~ HistorialClinico
-        +RegistrarAtencion(TipoAtencion, string, string, string, decimal) HistorialMedico
-        +ActualizarEstadoSalud(EstadoSalud) void
-        +RealizarEsterilizacion(string) void
-        +ObtenerEspecie()* string
-        +EmitirFichaClinica()* string
-        +CalcularDosisMedicamento(double)* double
-        +HacerSonidoCaracteristico()* string
+        +RegistrarAtencion(tipo, dx, tx, vet, costo) HistorialMedico
+        +ActualizarEstadoSalud(nuevoEstado) void
+        +RealizarEsterilizacion(vet) void
+        +ObtenerEspecie() string*
+        +EmitirFichaClinica() string*
+        +CalcularDosisMedicamento(factor) double*
+        +HacerSonidoCaracteristico() string*
     }
 
     class Perro {
@@ -43,9 +38,9 @@ classDiagram
         +bool VacunacionSextupleAlDia
         +ObtenerEspecie() string
         +EmitirFichaClinica() string
-        +CalcularDosisMedicamento(double) double
+        +CalcularDosisMedicamento(factor) double
         +HacerSonidoCaracteristico() string
-        +AplicarVacunaSextuple(string) void
+        +AplicarVacunaSextuple(vet) void
     }
 
     class Gato {
@@ -57,10 +52,10 @@ classDiagram
         +bool VacunaTripleFelinaAlDia
         +ObtenerEspecie() string
         +EmitirFichaClinica() string
-        +CalcularDosisMedicamento(double) double
+        +CalcularDosisMedicamento(factor) double
         +HacerSonidoCaracteristico() string
-        +RealizarTestFelvFiv(string, string) void
-        +AplicarVacunaTripleFelina(string) void
+        +RealizarTestFelvFiv(res, vet) void
+        +AplicarVacunaTripleFelina(vet) void
     }
 
     class HistorialMedico {
@@ -75,7 +70,7 @@ classDiagram
         +string Tratamiento
         +string Veterinario
         +decimal Costo
-        ~HistorialMedico(TipoAtencion, string, string, string, decimal)
+        +HistorialMedico(tipo, dx, tx, vet, costo)
         +ObtenerFichaResumida() string
     }
 
@@ -116,9 +111,9 @@ classDiagram
         +Voluntario VoluntarioEvaluador
         +EstadoSolicitud Estado
         +string Observaciones
-        +AsignarVoluntario(Voluntario) void
+        +AsignarVoluntario(voluntario) void
         +EvaluarPreAprobacion() void
-        +ConcretarAdopcion(string) void
+        +ConcretarAdopcion(resolucion) void
         +ObtenerResumen() string
     }
 
@@ -130,19 +125,19 @@ classDiagram
         +int CapacidadMaxima
         +IReadOnlyList~Animal~ AnimalesAlbergados
         +IReadOnlyList~Voluntario~ VoluntariosRegistrados
-        +RecibirAnimal(Animal) void
-        +RetirarAnimal(Animal) bool
-        +InscribirVoluntario(Voluntario) void
-        +ContarPorEspecie~T~() int
+        +RecibirAnimal(animal) void
+        +RetirarAnimal(animal) bool
+        +InscribirVoluntario(voluntario) void
+        +ContarPorEspecie() int
     }
 
-    %% RELACIONES
-    Animal <|-- Perro : Generalización / Herencia
-    Animal <|-- Gato : Generalización / Herencia
-    Animal "1" *-- "1..*" HistorialMedico : Composición Estricta
-    Refugio "1" o-- "0..*" Animal : Agregación
-    Refugio "1" o-- "0..*" Voluntario : Agregación
-    SolicitudAdopcion "0..*" --> "1" Adoptante : Asociación
-    SolicitudAdopcion "0..*" --> "1" Animal : Asociación
-    SolicitudAdopcion "0..*" --> "0..1" Voluntario : Asociación
+    %% RELACIONES FORMALES
+    Animal <|-- Perro : Generalizacion
+    Animal <|-- Gato : Generalizacion
+    Animal "1" *-- "1..*" HistorialMedico : Composicion
+    Refugio "1" o-- "0..*" Animal : Agregacion
+    Refugio "1" o-- "0..*" Voluntario : Agregacion
+    SolicitudAdopcion "0..*" --> "1" Adoptante : Asociacion
+    SolicitudAdopcion "0..*" --> "1" Animal : Asociacion
+    SolicitudAdopcion "0..*" --> "0..1" Voluntario : Asociacion
 ```

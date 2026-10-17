@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +14,6 @@
             --text: #0f172a;
             --border: #e2e8f0;
         }
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             background-color: var(--bg);
@@ -24,7 +22,6 @@
             padding: 24px;
             line-height: 1.6;
         }
-
         .header {
             max-width: 1200px;
             margin: 0 auto 30px auto;
@@ -34,18 +31,15 @@
             border-radius: 12px;
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
         }
-
         .header h1 {
             margin: 0 0 10px 0;
             font-size: 26px;
         }
-
         .header p {
             margin: 5px 0;
             opacity: 0.9;
             font-size: 15px;
         }
-
         .badge {
             display: inline-block;
             background: rgba(255, 255, 255, 0.2);
@@ -54,8 +48,8 @@
             font-size: 12px;
             font-weight: 600;
             margin-right: 8px;
+            margin-bottom: 6px;
         }
-
         .card {
             max-width: 1200px;
             margin: 0 auto 35px auto;
@@ -65,7 +59,6 @@
             padding: 28px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
-
         .card-title {
             display: flex;
             align-items: center;
@@ -73,14 +66,14 @@
             border-bottom: 2px solid #f1f5f9;
             padding-bottom: 16px;
             margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 12px;
         }
-
         .card-title h2 {
             margin: 0;
             font-size: 20px;
             color: var(--primary);
         }
-
         .diagram-container {
             overflow-x: auto;
             background: #ffffff;
@@ -88,8 +81,15 @@
             border-radius: 8px;
             border: 1px solid #edf2f7;
             text-align: center;
+            margin-bottom: 20px;
         }
-
+        .diagram-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 6px;
+        }
         .legend {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -100,19 +100,16 @@
             border-radius: 8px;
             font-size: 14px;
         }
-
         .legend-item {
             display: flex;
             align-items: center;
             gap: 10px;
         }
-
         .legend-color {
             width: 16px;
             height: 16px;
             border-radius: 4px;
         }
-
         .btn-print {
             background: #0284c7;
             color: white;
@@ -123,13 +120,37 @@
             cursor: pointer;
             transition: 0.2s;
         }
-
         .btn-print:hover {
             background: #0369a1;
         }
+        .tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .tab-btn {
+            background: #e2e8f0;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            color: #334155;
+            transition: 0.2s;
+        }
+        .tab-btn.active {
+            background: #0284c7;
+            color: white;
+        }
+        .tab-pane {
+            display: none;
+        }
+        .tab-pane.active {
+            display: block;
+        }
     </style>
 </head>
-
 <body>
 
     <div class="header">
@@ -140,10 +161,8 @@
         <span class="badge">Docente: MARÍA UBILLA SALINAS</span>
         <h1>Visor Oficial de Arquitectura UML: Caso Fundación Huellitas</h1>
         <p><strong>Articulación con Evaluación Nacional de Especialidad (ENE 2026)</strong></p>
-        <p>Estudiante: <strong>Pablo Esteban Herrera Bustamante</strong> (ikuzoherrera@gmail.com) | Docente:
-            <strong>MARÍA UBILLA SALINAS</strong></p>
-        <p>Demostración integral de las 4 relaciones de la POO: Generalización/Herencia, Composición, Agregación y
-            Asociación.</p>
+        <p>Estudiante: <strong>Pablo Esteban Herrera Bustamante</strong> (ikuzoherrera@gmail.com) | Docente: <strong>MARÍA UBILLA SALINAS</strong></p>
+        <p>Demostración integral de las 4 relaciones de la POO: Generalización/Herencia, Composición, Agregación y Asociación.</p>
     </div>
 
     <!-- SECCIÓN 1: SUBTAREA 1A -->
@@ -152,11 +171,16 @@
             <h2>Subtarea 1A: Esquema Conceptual Preliminar y Justificación Técnica</h2>
             <button class="btn-print" onclick="window.print()">🖨 Imprimir / Guardar en PDF</button>
         </div>
-        <p>Representación conceptual de entidades clave y categorización de los 4 tipos de relaciones de la Programación
-            Orientada a Objetos.</p>
+        <p>Representación conceptual de entidades clave y categorización de los 4 tipos de relaciones de la Programación Orientada a Objetos.</p>
+        
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('1a-mermaid', this)">Vista Diagrama Dinámico</button>
+            <button class="tab-btn" onclick="switchTab('1a-svg', this)">Vista Vectorial HD (.SVG)</button>
+        </div>
 
-        <div class="diagram-container">
-            <pre class="mermaid">
+        <div id="1a-mermaid" class="tab-pane active">
+            <div class="diagram-container">
+                <pre class="mermaid">
 graph TD
     classDef abstractClass fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,font-weight:bold;
     classDef concreteClass fill:#f1f8e9,stroke:#33691e,stroke-width:2px;
@@ -187,26 +211,21 @@ graph TD
     SolicitudAdopcion -->|"4. Asociación (Vínculo colaborativo)"| Adoptante
     SolicitudAdopcion -->|"4. Asociación (Vínculo colaborativo)"| Animal
     SolicitudAdopcion -->|"4. Asociación (Supervisión)"| Voluntario
-            </pre>
+                </pre>
+            </div>
+        </div>
+
+        <div id="1a-svg" class="tab-pane">
+            <div class="diagram-container">
+                <img src="esquema_conceptual_1a.svg" alt="Esquema Conceptual Preliminar 1A" />
+            </div>
         </div>
 
         <div class="legend">
-            <div class="legend-item">
-                <div class="legend-color" style="background: #e3f2fd; border: 1px solid #1565c0;"></div>
-                <strong>Generalización / Abstracción:</strong> Superclase base
-            </div>
-            <div class="legend-item">
-                <div class="legend-color" style="background: #f1f8e9; border: 1px solid #33691e;"></div>
-                <strong>Especialización:</strong> Subclases concretas
-            </div>
-            <div class="legend-item">
-                <div class="legend-color" style="background: #fbe9e7; border: 1px solid #d84315;"></div>
-                <strong>Composición:</strong> Ciclo de vida subordinado
-            </div>
-            <div class="legend-item">
-                <div class="legend-color" style="background: #ede7f6; border: 1px solid #512da8;"></div>
-                <strong>Agregación / Asociación:</strong> Vínculos desacoplados
-            </div>
+            <div class="legend-item"><div class="legend-color" style="background: #e3f2fd; border: 1px solid #1565c0;"></div> <strong>Generalización / Abstracción:</strong> Superclase base</div>
+            <div class="legend-item"><div class="legend-color" style="background: #f1f8e9; border: 1px solid #33691e;"></div> <strong>Especialización:</strong> Subclases concretas</div>
+            <div class="legend-item"><div class="legend-color" style="background: #fbe9e7; border: 1px solid #d84315;"></div> <strong>Composición:</strong> Ciclo de vida subordinado</div>
+            <div class="legend-item"><div class="legend-color" style="background: #ede7f6; border: 1px solid #512da8;"></div> <strong>Agregación / Asociación:</strong> Vínculos desacoplados</div>
         </div>
     </div>
 
@@ -215,11 +234,24 @@ graph TD
         <div class="card-title">
             <h2>Subtarea 1B: Diagrama Formal de Clases en Notación UML Completa</h2>
         </div>
-        <p>Estructura formal con especificación exhaustiva de visibilidad (+ Público, - Privado, # Protegido), tipos de
-            datos, parámetros de métodos, multiplicidad y cardinalidad.</p>
+        <p>Estructura formal con especificación exhaustiva de visibilidad (+ Público, - Privado, # Protegido), tipos de datos, parámetros de métodos, multiplicidad y cardinalidad.</p>
 
-        <div class="diagram-container">
-            <pre class="mermaid">
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('1b-svg', this)">Vista Vectorial Formal HD (.SVG)</button>
+            <button class="tab-btn" onclick="switchTab('1b-mermaid', this)">Vista Diagrama Dinámico (Mermaid)</button>
+        </div>
+
+        <!-- Vista 1: SVG de alta fidelidad pre-renderizado (100% garantizado) -->
+        <div id="1b-svg" class="tab-pane active">
+            <div class="diagram-container">
+                <img src="diagrama_clases_formal_1b.svg" alt="Diagrama de Clases UML Formal 1B" />
+            </div>
+        </div>
+
+        <!-- Vista 2: Mermaid con sintaxis 100% compatible con v10.9.8 -->
+        <div id="1b-mermaid" class="tab-pane">
+            <div class="diagram-container">
+                <pre class="mermaid">
 classDiagram
     direction TB
 
@@ -244,10 +276,10 @@ classDiagram
         +RegistrarAtencion(tipo, dx, tx, vet, costo) HistorialMedico
         +ActualizarEstadoSalud(nuevoEstado) void
         +RealizarEsterilizacion(vet) void
-        +ObtenerEspecie()* string
-        +EmitirFichaClinica()* string
-        +CalcularDosisMedicamento(factor)* double
-        +HacerSonidoCaracteristico()* string
+        +ObtenerEspecie() string*
+        +EmitirFichaClinica() string*
+        +CalcularDosisMedicamento(factor) double*
+        +HacerSonidoCaracteristico() string*
     }
 
     class Perro {
@@ -291,7 +323,7 @@ classDiagram
         +string Tratamiento
         +string Veterinario
         +decimal Costo
-        ~HistorialMedico(tipo, dx, tx, vet, costo)
+        +HistorialMedico(tipo, dx, tx, vet, costo)
         +ObtenerFichaResumida() string
     }
 
@@ -349,30 +381,37 @@ classDiagram
         +RecibirAnimal(animal) void
         +RetirarAnimal(animal) bool
         +InscribirVoluntario(voluntario) void
-        +ContarPorEspecie~T~() int
+        +ContarPorEspecie() int
     }
 
-    %% RELACIONES FORMALES
-    Animal <|-- Perro : Herencia / Generalización
-    Animal <|-- Gato : Herencia / Generalización
-    Animal "1" *-- "1..*" HistorialMedico : Composición Estricta
-    Refugio "1" o-- "0..*" Animal : Agregación
-    Refugio "1" o-- "0..*" Voluntario : Agregación
-    SolicitudAdopcion "0..*" --> "1" Adoptante : Asociación
-    SolicitudAdopcion "0..*" --> "1" Animal : Asociación
-    SolicitudAdopcion "0..*" --> "0..1" Voluntario : Asociación
-            </pre>
+    %% RELACIONES
+    Animal <|-- Perro : Generalizacion
+    Animal <|-- Gato : Generalizacion
+    Animal "1" *-- "1..*" HistorialMedico : Composicion
+    Refugio "1" o-- "0..*" Animal : Agregacion
+    Refugio "1" o-- "0..*" Voluntario : Agregacion
+    SolicitudAdopcion "0..*" --> "1" Adoptante : Asociacion
+    SolicitudAdopcion "0..*" --> "1" Animal : Asociacion
+    SolicitudAdopcion "0..*" --> "0..1" Voluntario : Asociacion
+                </pre>
+            </div>
         </div>
     </div>
 
     <script>
+        function switchTab(targetId, btn) {
+            const parent = btn.closest('.card');
+            parent.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            parent.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById(targetId).classList.add('active');
+        }
+
         mermaid.initialize({
             startOnLoad: true,
             theme: 'default',
-            securityLevel: 'loose',
-            flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' }
+            securityLevel: 'loose'
         });
     </script>
 </body>
-
 </html>
