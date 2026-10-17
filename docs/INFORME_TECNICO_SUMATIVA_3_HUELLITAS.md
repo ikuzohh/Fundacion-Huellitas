@@ -8,9 +8,12 @@
 | :--- | :--- |
 | **Institución:** | Instituto Profesional AIEP |
 | **Escuela:** | Escuela de Tecnologías de la Información y Comunicación |
-| **Módulo:** | Taller de Programación (PRO205) |
+| **Módulo:** | Taller de Programación (PRO205) — 2026 |
 | **Evaluación:** | Evaluación Sumativa N° 3 (35% Ponderación) |
 | **Caso Seleccionado:** | **OPCIÓN A: Caso "Fundación Huellitas" (Modelado UML y Dominio POO)** |
+| **Estudiante:** | **Pablo Esteban Herrera Bustamante** |
+| **Correo Electrónico:** | **ikuzoherrera@gmail.com** |
+| **Docente / Profesora:** | **MARÍA UBILLA SALINAS** |
 | **Tecnología Implementada:** | C# (.NET 8.0) — Arquitectura en Capas y Pruebas xUnit |
 | **Estado de Entrega:** | Completo — 100 Puntos (Exigencia 60% para Nota 4.0) |
 

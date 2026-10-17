@@ -69,15 +69,18 @@ def create_report():
     run_sub.font.color.rgb = RGBColor(2, 132, 199)
 
     # TABLA METADATOS
-    meta_table = doc.add_table(rows=6, cols=2)
+    meta_table = doc.add_table(rows=9, cols=2)
     meta_table.alignment = WD_TABLE_ALIGNMENT.CENTER
     meta_table.autofit = False
 
     metadata = [
+        ("Estudiante:", "Pablo Esteban Herrera Bustamante"),
+        ("Correo Electrónico:", "ikuzoherrera@gmail.com"),
+        ("Docente / Profesora:", "MARÍA UBILLA SALINAS"),
         ("Asignatura:", "Taller de Programación (PRO205)"),
         ("Ponderación de Evaluación:", "35% de la Calificación Final (100 Puntos Totales)"),
         ("Caso y Desafío:", "Opción A: Fundación Huellitas + Demostración Polimórfica en C# (.NET 8)"),
-        ("Modalidad:", "Individual / Grupal (Máximo 2 estudiantes)"),
+        ("Modalidad:", "Individual (Estudiante Autónomo)"),
         ("Criterios de Evaluación:", "C.E. 1.8 (Relaciones UML), C.E. 1.9 (Requerimientos), POO Avanzada"),
         ("Puntaje Máximo Esperado:", "100 Puntos (Exigencia 60% para Nota 4.0)")
     ]
